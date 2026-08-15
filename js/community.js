@@ -132,7 +132,7 @@ function setupCommunityActions() {
     const findFriendsButton = document.getElementById('findFriendsButton');
     const joinChallengeButton = document.getElementById('joinChallengeButton');
     const browseQuestionsButton = document.getElementById('browseQuestionsButton');
-    const communityMenuButton = document.getElementById('communityMenuButton');
+
 
     createPostButton?.addEventListener('click', () => {
         showCommunityToast('Create Post', 'Post creation will be available in the next community update.');
@@ -159,10 +159,10 @@ function setupCommunityActions() {
         });
     });
 
-    communityMenuButton?.addEventListener('click', () => {
+
         showCommunityToast('Profile', 'Profile settings will be connected to the account system later.');
-    });
-}
+    };
+
 
 function showCommunityToast(title, message) {
     if (typeof Toast !== 'undefined') {

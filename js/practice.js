@@ -311,17 +311,10 @@ function closeSession() {
     practiceState.mode = null;
 }
 
-function toggleSidebar(open) {
-    elements.sidebar.classList.toggle('open', open);
-    elements.sidebarOverlay.classList.toggle('active', open);
-}
-
 function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || localStorage.getItem('serenotes_theme') || 'light';
-    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-    document.documentElement.setAttribute('data-theme', nextTheme);
-    localStorage.setItem('serenotes_theme', nextTheme);
+    if (window.LS?.ThemeManager?.toggle) {
+        window.LS.ThemeManager.toggle();
+    }
 }
 
 function logout() {
@@ -360,9 +353,6 @@ elements.nextQuestion.addEventListener('click', () => {
 });
 
 elements.closeSession.addEventListener('click', closeSession);
-elements.menuButton.addEventListener('click', () => toggleSidebar(true));
-elements.sidebarClose.addEventListener('click', () => toggleSidebar(false));
-elements.sidebarOverlay.addEventListener('click', () => toggleSidebar(false));
 elements.themeToggle.addEventListener('click', toggleTheme);
 elements.logoutButton.addEventListener('click', logout);
 
