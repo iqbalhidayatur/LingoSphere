@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create your LingoSphere account and start learning English through real conversation simulations." />
+  <title>Sign Up — LingoSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- LingoSphere Styles -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     AUTH LAYOUT — SPLIT SCREEN
+═══════════════════════════════════════════ -->
+<div class="auth-page">
+
+  <!-- ─── LEFT PANEL: Branding + Preview ─── -->
+  <aside class="auth-panel-left">
+
+    <!-- Decorative orbs -->
+    <div class="auth-orb auth-orb-1"></div>
+    <div class="auth-orb auth-orb-2"></div>
+    <div class="auth-orb auth-orb-3"></div>
+
+    <!-- Top: Logo -->
+    <div style="position:relative;z-index:2;">
+      <a href="index.html" class="brand-link">
+        <span class="brand-dot"></span>
+        LingoSphere
+      </a>
+    </div>
+
+    <!-- Middle: Dynamic Preview -->
+    <div class="auth-left-content auth-preview">
+
+      <!-- Preview Step 1: Default intro -->
+      <div class="preview-step" data-for-step="1" style="opacity:1;transform:translateY(0);">
+        <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem;font-weight:600;">
+          Your journey starts here
+        </p>
+        <h2 class="auth-left-tagline">
+          Speak English<br>like you <span style="background:var(--grad-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">mean it.</span>
+        </h2>
+        <p class="auth-left-sub">
+          Join 12,400+ learners who stopped memorizing grammar and started having real conversations — and real results.
+        </p>
+
+        <div class="auth-stats-grid">
+          <div class="auth-stat-card">
+            <div class="num">12K+</div>
+            <div class="lbl">Active Learners</div>
+          </div>
+          <div class="auth-stat-card">
+            <div class="num">48+</div>
+            <div class="lbl">Scenarios</div>
+          </div>
+          <div class="auth-stat-card">
+            <div class="num">4.9★</div>
+            <div class="lbl">Avg. Rating</div>
+          </div>
+          <div class="auth-stat-card">
+            <div class="num">Free</div>
+            <div class="lbl">To Start</div>
+          </div>
+        </div>
+
+        <div class="auth-testi">
+          <p class="auth-testi-text">
+            "I practiced job interview simulations every day and landed my dream job at a multinational company. The feedback was incredibly specific."
+          </p>
+          <div class="auth-testi-author">
+            <div class="auth-testi-avatar">RA</div>
+            <div>
+              <div class="auth-testi-name">Rina Amelia</div>
+              <div class="auth-testi-role">Software Engineer · Jakarta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview Step 2: Goal selected -->
+      <div class="preview-step" data-for-step="2" style="opacity:0;transform:translateY(10px);">
+        <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem;font-weight:600;">
+          What we'll focus on
+        </p>
+        <h2 class="auth-left-tagline">
+          Your goal shapes<br>your <span style="background:var(--grad-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">learning path.</span>
+        </h2>
+        <p class="auth-left-sub" style="margin-bottom:1.5rem;">
+          We'll tailor your scenarios, vocabulary, and feedback based on what you actually need.
+        </p>
+
+        <!-- Live goal preview card -->
+        <div class="auth-stat-card" style="padding:1.25rem;">
+          <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;font-weight:500;">Selected Goal</div>
+          <div data-preview-goal style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:#fff;">
+            — Select a goal →
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;">
+          <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;font-weight:500;">All scenarios included:</div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+            <span style="font-size:0.78rem;padding:0.25rem 0.7rem;border-radius:999px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.1);">💼 Job Interview</span>
+            <span style="font-size:0.78rem;padding:0.25rem 0.7rem;border-radius:999px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.1);">✈️ Travel</span>
+            <span style="font-size:0.78rem;padding:0.25rem 0.7rem;border-radius:999px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.1);">📊 Presentation</span>
+            <span style="font-size:0.78rem;padding:0.25rem 0.7rem;border-radius:999px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.1);">☕ Daily</span>
+            <span style="font-size:0.78rem;padding:0.25rem 0.7rem;border-radius:999px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.1);">🏢 Professional</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview Step 3: Level -->
+      <div class="preview-step" data-for-step="3" style="opacity:0;transform:translateY(10px);">
+        <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem;font-weight:600;">
+          Your level now
+        </p>
+        <h2 class="auth-left-tagline">
+          Everyone starts<br><span style="background:var(--grad-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">somewhere great.</span>
+        </h2>
+        <p class="auth-left-sub" style="margin-bottom:1.5rem;">
+          We'll calibrate your first scenarios to be challenging but never overwhelming.
+        </p>
+
+        <!-- Level display -->
+        <div class="auth-stat-card" style="padding:1.25rem;margin-bottom:1rem;">
+          <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;font-weight:500;">Your current level</div>
+          <div data-preview-level style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:#fff;">
+            — Select your level →
+          </div>
+        </div>
+
+        <!-- Level progression chart (visual) -->
+        <div style="background:rgba(255,255,255,0.05);border-radius:var(--radius-md);padding:1rem;border:1px solid rgba(255,255,255,0.08);">
+          <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;font-weight:500;">Your path to fluency</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;">
+              <span style="width:20px;height:20px;border-radius:50%;background:rgba(163,230,53,0.2);border:1px solid rgba(163,230,53,0.4);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:#A3E635;">01</span>
+              <span style="color:rgba(255,255,255,0.6);">Explorer</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;">
+              <span style="width:20px;height:20px;border-radius:50%;background:rgba(34,211,238,0.2);border:1px solid rgba(34,211,238,0.4);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:#22D3EE;">02</span>
+              <span style="color:rgba(255,255,255,0.6);">Traveler</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;">
+              <span style="width:20px;height:20px;border-radius:50%;background:rgba(99,91,255,0.3);border:1px solid rgba(99,91,255,0.5);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:#8B85FF;">03</span>
+              <span style="color:rgba(255,255,255,0.6);">Speaker</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;">
+              <span style="width:20px;height:20px;border-radius:50%;background:rgba(168,85,247,0.2);border:1px solid rgba(168,85,247,0.4);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:#A855F7;">04</span>
+              <span style="color:rgba(255,255,255,0.6);">Communicator</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;">
+              <span style="width:20px;height:20px;border-radius:50%;background:rgba(245,158,11,0.2);border:1px solid rgba(245,158,11,0.4);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:#F59E0B;">05</span>
+              <span style="color:rgba(255,255,255,0.6);">Fluent ✨</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview Step 4: Schedule -->
+      <div class="preview-step" data-for-step="4" style="opacity:0;transform:translateY(10px);">
+        <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem;font-weight:600;">
+          Consistency wins
+        </p>
+        <h2 class="auth-left-tagline">
+          Even 5 minutes<br>a day <span style="background:var(--grad-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">transforms you.</span>
+        </h2>
+        <p class="auth-left-sub" style="margin-bottom:1.5rem;">
+          Research shows that daily practice — even short sessions — produces dramatically better results than weekly cramming.
+        </p>
+
+        <!-- Weekly streak preview -->
+        <div style="background:rgba(255,255,255,0.05);border-radius:var(--radius-md);padding:1.1rem;border:1px solid rgba(255,255,255,0.08);margin-bottom:1rem;">
+          <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;font-weight:500;">What your week could look like</div>
+          <div style="display:flex;gap:0.4rem;align-items:flex-end;">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0.3rem;">
+              <div style="width:100%;height:40px;background:rgba(99,91,255,0.4);border-radius:4px;"></div>
+              <span style="font-size:0.65rem;color:rgba(255,255,255,0.35);">Mon</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0.3rem;">
+              <div style="width:100%;height:55px;background:rgba(99,91,255,0.6);border-radius:4px;"></div>
+              <span style="font-size:0.65rem;color:rgba(255,255,255,0.35);">Tue</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0.3rem;">
+              <div style="width:100%;height:35px;background:rgba(99,91,255,0.4);border-radius:4px;"></div>
+              <span style="font-size:0.65rem;color:rgba(255,255,255,0.35);">Wed</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0.3rem;">
+              <div style="width:100%;height:65px;background:rgba(99,91,255,0.8);border-radius:4px;"></div>
+              <span style="font-size:0.65rem;color:rgba(255,255,255,0.35);">Thu</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0.3rem;">
+              <div style="width:100%;height:50px;background:rgba(99,91,255,0.6);border-radius:4px;"></div>
+              <span style="font-size:0.65rem;color:rgba(255,255,255,0.35);">Fri</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0.3rem;">
+              <div style="width:100%;height:75px;background:var(--grad-primary);border-radius:4px;"></div>
+              <span style="font-size:0.65rem;color:rgba(255,255,255,0.35);">Sat</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:0.3rem;">
+              <div style="width:100%;height:45px;background:rgba(99,91,255,0.5);border-radius:4px;"></div>
+              <span style="font-size:0.65rem;color:rgba(255,255,255,0.35);">Sun</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-testi">
+          <p class="auth-testi-text">
+            "Just 15 minutes every morning before work. Within a month my confidence in meetings completely changed."
+          </p>
+          <div class="auth-testi-author">
+            <div class="auth-testi-avatar" style="background:linear-gradient(135deg,#22D3EE,#0EA5E9);">SD</div>
+            <div>
+              <div class="auth-testi-name">Siti Dewi</div>
+              <div class="auth-testi-role">Marketing Manager · Surabaya</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom: Footer -->
+    <div style="position:relative;z-index:2;">
+      <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);">
+        © 2025 LingoSphere · <a href="#" style="color:rgba(255,255,255,0.4);">Privacy</a> · <a href="#" style="color:rgba(255,255,255,0.4);">Terms</a>
+      </p>
+    </div>
+
+  </aside>
+
+
+  <!-- ─── RIGHT PANEL: Form ─── -->
+  <main class="auth-panel-right">
+
+    <!-- Mobile: top nav -->
+    <div class="auth-mobile-brand">
+      <a href="index.html" class="auth-mobile-logo">
+        <span class="brand-dot"></span>
+        LingoSphere
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn-theme" data-theme-toggle data-theme-icon aria-label="Toggle theme">
+          <i class="bi bi-moon-fill"></i>
+        </button>
+        <a href="signin.html" style="font-size:0.85rem;font-weight:600;color:var(--primary);">Sign In</a>
+      </div>
+    </div>
+
+    <div class="auth-form-container signup-wizard">
+
+      <!-- ── Step Progress Bar ── -->
+      <div class="step-progress-wrap">
+        <div class="step-progress-bar-outer">
+          <div class="step-progress-bar-inner" style="width:0%"></div>
+        </div>
+        <div class="step-progress-labels">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════
+           STEP 1 — Account Info
+      ══════════════════════════════════ -->
+      <div class="step-panel" data-step="1">
+
+        <div class="step-heading">
+          <h2>Create your account</h2>
+          <p>Free forever. No credit card required.</p>
+        </div>
+
+        <!-- Social auth (demo) -->
+        <div class="d-flex gap-2 mb-1">
+          <button class="btn-social" onclick="window.LS?.Toast.show({title:'Coming Soon',message:'Social login will be available soon.',type:'info'})">
+            <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+            Continue with Google
+          </button>
+          <button class="btn-social" onclick="window.LS?.Toast.show({title:'Coming Soon',message:'Apple login will be available soon.',type:'info'})">
+            <i class="bi bi-apple" style="font-size:1.1rem;"></i>
+          </button>
+        </div>
+
+        <div class="auth-divider">or sign up with email</div>
+
+        <!-- Name -->
+        <div class="ls-form-group">
+          <label class="ls-label" for="su-name">Full Name</label>
+          <input type="text" id="su-name" class="ls-input" placeholder="e.g. Alex Morgan" autocomplete="name" />
+          <div class="form-error" id="su-name-error"></div>
+        </div>
+
+        <!-- Email -->
+        <div class="ls-form-group">
+          <label class="ls-label" for="su-email">Email Address</label>
+          <input type="email" id="su-email" class="ls-input" placeholder="you@example.com" autocomplete="email" />
+          <div class="form-error" id="su-email-error"></div>
+        </div>
+
+        <!-- Password -->
+        <div class="ls-form-group">
+          <label class="ls-label" for="su-password">Password</label>
+          <div class="input-pw-wrap">
+            <input type="password" id="su-password" class="ls-input" placeholder="Min. 8 characters" autocomplete="new-password" />
+            <button class="btn-pw-toggle" type="button" aria-label="Toggle password visibility">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+          <div class="pw-strength-wrap">
+            <div class="pw-strength-bar">
+              <div class="pw-strength-seg"></div>
+              <div class="pw-strength-seg"></div>
+              <div class="pw-strength-seg"></div>
+              <div class="pw-strength-seg"></div>
+            </div>
+            <span class="pw-strength-label"></span>
+          </div>
+          <div class="form-error" id="su-password-error"></div>
+        </div>
+
+        <!-- Terms -->
+        <div class="ls-form-group">
+          <div class="terms-row">
+            <input type="checkbox" id="su-terms" />
+            <label for="su-terms">
+              I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. I'm at least 13 years old.
+            </label>
+          </div>
+          <div class="form-error" id="su-terms-error"></div>
+        </div>
+
+        <!-- Nav -->
+        <div class="step-nav">
+          <button class="btn-step-next w-100" data-su-next>
+            Continue
+            <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+
+        <p class="auth-footer-note">
+          Already have an account? <a href="signin.html">Sign In</a>
+        </p>
+
+      </div>
+
+
+      <!-- ══════════════════════════════════
+           STEP 2 — Learning Goal
+      ══════════════════════════════════ -->
+      <div class="step-panel" data-step="2">
+
+        <div class="step-heading">
+          <h2>What's your main goal?</h2>
+          <p>We'll prioritize scenarios that match your real needs.</p>
+        </div>
+
+        <div class="select-grid select-grid-2">
+
+          <div class="select-card" data-goal="job_interview">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <span class="card-emoji">💼</span>
+            <span class="card-label">Job Interview</span>
+            <span class="card-desc">Ace HR rounds and technical interviews</span>
+          </div>
+
+          <div class="select-card" data-goal="travel">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <span class="card-emoji">✈️</span>
+            <span class="card-label">Travel</span>
+            <span class="card-desc">Navigate airports, hotels & restaurants</span>
+          </div>
+
+          <div class="select-card" data-goal="presentation">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <span class="card-emoji">📊</span>
+            <span class="card-label">Presentations</span>
+            <span class="card-desc">Deliver pitches and handle Q&A</span>
+          </div>
+
+          <div class="select-card" data-goal="daily">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <span class="card-emoji">☕</span>
+            <span class="card-label">Daily Life</span>
+            <span class="card-desc">Small talk & social conversations</span>
+          </div>
+
+          <div class="select-card" data-goal="professional">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <span class="card-emoji">🏢</span>
+            <span class="card-label">Professional</span>
+            <span class="card-desc">Emails, meetings & workplace English</span>
+          </div>
+
+          <div class="select-card" data-goal="general">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <span class="card-emoji">🌍</span>
+            <span class="card-label">All-Around</span>
+            <span class="card-desc">Balanced mix of everything</span>
+          </div>
+
+        </div>
+
+        <div class="step-nav">
+          <button class="btn-step-back" data-su-back>
+            <i class="bi bi-arrow-left"></i>
+            Back
+          </button>
+          <button class="btn-step-next" data-su-next>
+            Next
+            <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+
+
+      <!-- ══════════════════════════════════
+           STEP 3 — Current Level
+      ══════════════════════════════════ -->
+      <div class="step-panel" data-step="3">
+
+        <div class="step-heading">
+          <h2>What's your English level?</h2>
+          <p>Be honest — we'll adjust the difficulty to match you.</p>
+        </div>
+
+        <div class="select-grid" style="grid-template-columns:1fr;">
+
+          <div class="select-card" data-level="beginner">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <div class="level-card">
+              <div class="level-num">A1</div>
+              <div class="card-text">
+                <span class="card-label">Beginner</span>
+                <span class="card-desc">I know basic greetings and very simple phrases</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="select-card" data-level="elementary">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <div class="level-card">
+              <div class="level-num">A2</div>
+              <div class="card-text">
+                <span class="card-label">Elementary</span>
+                <span class="card-desc">I can handle simple, predictable conversations</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="select-card" data-level="intermediate">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <div class="level-card">
+              <div class="level-num">B1</div>
+              <div class="card-text">
+                <span class="card-label">Intermediate</span>
+                <span class="card-desc">I can discuss familiar topics but make some errors</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="select-card" data-level="upper">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <div class="level-card">
+              <div class="level-num">B2</div>
+              <div class="card-text">
+                <span class="card-label">Upper-Intermediate</span>
+                <span class="card-desc">I communicate well but want to sound more natural</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="select-card" data-level="advanced">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <div class="level-card">
+              <div class="level-num">C1</div>
+              <div class="card-text">
+                <span class="card-label">Advanced</span>
+                <span class="card-desc">I'm fluent but want to polish to near-native level</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="step-nav">
+          <button class="btn-step-back" data-su-back>
+            <i class="bi bi-arrow-left"></i>
+            Back
+          </button>
+          <button class="btn-step-next" data-su-next>
+            Next
+            <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+
+
+      <!-- ══════════════════════════════════
+           STEP 4 — Daily Time
+      ══════════════════════════════════ -->
+      <div class="step-panel" data-step="4">
+
+        <div class="step-heading">
+          <h2>How much time daily?</h2>
+          <p>Pick what's realistic — consistency beats intensity.</p>
+        </div>
+
+        <div class="select-grid" style="grid-template-columns:1fr;">
+
+          <div class="select-card time-card" data-time="5">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <span class="card-emoji">⚡</span>
+            <div class="card-text">
+              <span class="card-label">5 minutes</span>
+              <span class="card-desc">Quick daily habit — perfect for very busy schedules</span>
+            </div>
+            <span class="xp-hint">~50 XP/day</span>
+          </div>
+
+          <div class="select-card time-card" data-time="15">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <span class="card-emoji">🎯</span>
+            <div class="card-text">
+              <span class="card-label">15 minutes</span>
+              <span class="card-desc">Most popular — see real progress within weeks</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;flex-shrink:0;">
+              <span class="xp-hint">~100 XP/day</span>
+              <span style="font-size:0.68rem;color:var(--accent);font-weight:600;">⭐ Recommended</span>
+            </div>
+          </div>
+
+          <div class="select-card time-card" data-time="30">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <span class="card-emoji">🚀</span>
+            <div class="card-text">
+              <span class="card-label">30 minutes</span>
+              <span class="card-desc">Serious learner — accelerated improvement</span>
+            </div>
+            <span class="xp-hint">~200 XP/day</span>
+          </div>
+
+          <div class="select-card time-card" data-time="60">
+            <div class="check-mark"><i class="bi bi-check"></i></div>
+            <span class="card-emoji">🏆</span>
+            <div class="card-text">
+              <span class="card-label">60+ minutes</span>
+              <span class="card-desc">Intensive mode — fastest path to fluency</span>
+            </div>
+            <span class="xp-hint">~400 XP/day</span>
+          </div>
+
+        </div>
+
+        <div class="step-nav">
+          <button class="btn-step-back" data-su-back>
+            <i class="bi bi-arrow-left"></i>
+            Back
+          </button>
+          <button class="btn-step-next" data-su-next>
+            <i class="bi bi-rocket-takeoff-fill me-1"></i>
+            Build My Path
+          </button>
+        </div>
+
+      </div>
+
+    </div><!-- /.auth-form-container -->
+  </main>
+
+</div><!-- /.auth-page -->
+
+
+<!-- ═══════════════════════════════════════════
+     GENERATING OVERLAY
+═══════════════════════════════════════════ -->
+<div class="generating-overlay" role="status" aria-live="polite">
+  <div class="generating-icon">🧠</div>
+  <h2 class="generating-title">Building your learning path…</h2>
+  <p class="generating-subtitle">This only takes a moment</p>
+
+  <ul class="generating-steps">
+    <li class="gen-step" data-gen-step="1">
+      <div class="gen-step-icon"><i class="bi bi-person-check"></i></div>
+      Analyzing your profile
+    </li>
+    <li class="gen-step" data-gen-step="2">
+      <div class="gen-step-icon"><i class="bi bi-diagram-3"></i></div>
+      Mapping your learning path
+    </li>
+    <li class="gen-step" data-gen-step="3">
+      <div class="gen-step-icon"><i class="bi bi-chat-square-dots"></i></div>
+      Selecting your first scenarios
+    </li>
+    <li class="gen-step" data-gen-step="4">
+      <div class="gen-step-icon"><i class="bi bi-stars"></i></div>
+      Personalizing difficulty levels
+    </li>
+  </ul>
+
+  <div class="generating-progress">
+    <div class="progress" style="height:6px;">
+      <div class="progress-bar" id="genProgressBar" style="width:0%;transition:width 3.5s linear;"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Toast Container -->
+<div class="ls-toast-container"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- LingoSphere JS -->
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+
+<script>
+  // Trigger progress bar animation when overlay shows
+  const observer = new MutationObserver(() => {
+    const overlay = document.querySelector('.generating-overlay');
+    if (overlay?.classList.contains('show')) {
+      setTimeout(() => {
+        document.getElementById('genProgressBar').style.width = '100%';
+      }, 50);
+    }
+  });
+  const overlay = document.querySelector('.generating-overlay');
+  if (overlay) observer.observe(overlay, { attributes: true, attributeFilter: ['class'] });
+</script>
+
+</body>
+</html>

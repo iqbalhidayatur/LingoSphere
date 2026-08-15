@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#635BFF">
+  <title>Courses | LingoSphere</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/courses.css">
+  <link rel="stylesheet" href="css/learning.css">
+</head>
+<body class="learning-page courses-page page-transition">
+  <div class="learning-shell">
+    <aside class="learning-sidebar" id="learningSidebar">
+
+      <div class="sidebar-top">
+
+          <a
+              class="navbar-brand learning-brand"
+              href="index.html"
+              aria-label="LingoSphere home"
+          >
+              <span class="brand-dot"></span>
+              <span>LingoSphere</span>
+          </a>
+
+          <button
+              class="sidebar-close d-lg-none"
+              id="sidebarClose"
+              type="button"
+              aria-label="Close menu"
+          >
+              <i class="bi bi-x-lg"></i>
+          </button>
+
+      </div>
+
+
+      <div class="sidebar-user">
+
+          <div
+              class="avatar avatar-gradient"
+              id="sidebarAvatar"
+          >
+              AM
+          </div>
+
+          <div class="sidebar-user-copy">
+
+              <strong id="sidebarUserName">
+                  Alex Morgan
+              </strong>
+
+              <span id="sidebarUserLevel">
+                  Communicator · Level 4
+              </span>
+
+          </div>
+
+      </div>
+
+
+      <nav
+          class="learning-nav"
+          aria-label="Learning navigation"
+      >
+
+          <div class="nav-label">
+              Workspace
+          </div>
+
+
+          <a
+              href="learning.html"
+              class="learning-nav-link"
+              data-page="learning"
+          >
+              <span class="nav-icon">
+                  <i class="bi bi-grid-1x2-fill"></i>
+              </span>
+
+              <span>Dashboard</span>
+          </a>
+
+
+          <a
+              href="courses.html"
+              class="learning-nav-link"
+              data-page="courses"
+          >
+              <span class="nav-icon">
+                  <i class="bi bi-journal-bookmark-fill"></i>
+              </span>
+
+              <span>Courses</span>
+          </a>
+
+
+          <a
+              href="practice.html"
+              class="learning-nav-link"
+              data-page="practice"
+          >
+              <span class="nav-icon">
+                  <i class="bi bi-lightning-charge-fill"></i>
+              </span>
+
+              <span>Practice</span>
+          </a>
+
+
+          <a
+              href="community.html"
+              class="learning-nav-link"
+              data-page="community"
+          >
+              <span class="nav-icon">
+                  <i class="bi bi-people-fill"></i>
+              </span>
+
+              <span>Community</span>
+          </a>
+
+      </nav>
+
+
+      <div class="learning-sidebar-bottom">
+
+          <div class="nav-label">
+              Preferences
+          </div>
+
+
+          <button
+              class="learning-nav-link nav-button"
+              id="themeToggle"
+              type="button"
+          >
+              <span class="nav-icon">
+                  <i class="bi bi-moon-fill"></i>
+              </span>
+
+              <span>Theme</span>
+          </button>
+
+
+          <button
+              class="learning-nav-link nav-button"
+              id="logoutBtn"
+              type="button"
+          >
+              <span class="nav-icon">
+                  <i class="bi bi-box-arrow-right"></i>
+              </span>
+
+              <span>Sign Out</span>
+          </button>
+
+      </div>
+
+  </aside>
+
+
+  <div
+      class="sidebar-backdrop"
+      id="sidebarBackdrop"
+  ></div>
+
+    <main class="learning-main">
+      <header class="learning-topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn d-lg-none" id="sidebarOpen" aria-label="Open menu"><i class="bi bi-list"></i></button>
+          <div><span class="eyebrow">Learning library</span><h1>Choose your next course.</h1></div>
+        </div>
+        <div class="topbar-actions">
+          <button class="topbar-icon" data-theme-toggle data-theme-icon aria-label="Toggle theme"><i class="bi bi-moon-fill"></i></button>
+          <button class="topbar-icon notification-btn" id="notificationBtn" aria-label="Notifications"><i class="bi bi-bell-fill"></i><span class="notification-dot"></span></button>
+          <div class="topbar-avatar avatar-gradient" id="topbarAvatar">AM</div>
+        </div>
+      </header>
+
+      <div class="learning-content courses-content">
+        <section class="courses-hero reveal">
+          <div class="courses-hero-copy">
+            <span class="section-kicker">Personalized for you</span>
+            <h2>Build practical English skills, one course at a time.</h2>
+            <p>Choose a topic, follow the lessons, and collect XP as you improve.</p>
+            <div class="courses-summary">
+              <span><i class="bi bi-check-circle-fill"></i> 1 course in progress</span>
+              <span><i class="bi bi-clock-fill"></i> 18 min learned this week</span>
+            </div>
+          </div>
+          <div class="hero-learning-ring" aria-hidden="true">
+            <div class="ring-inner"><strong>35%</strong><span>current course</span></div>
+          </div>
+        </section>
+
+        <section class="courses-toolbar reveal">
+          <div class="course-tabs" role="tablist" aria-label="Course filters">
+            <button class="course-tab active" data-filter="all" role="tab" aria-selected="true">All courses</button>
+            <button class="course-tab" data-filter="in-progress" role="tab" aria-selected="false">In progress</button>
+            <button class="course-tab" data-filter="beginner" role="tab" aria-selected="false">Beginner</button>
+            <button class="course-tab" data-filter="intermediate" role="tab" aria-selected="false">Intermediate</button>
+          </div>
+          <label class="course-search"><i class="bi bi-search"></i><input id="courseSearch" type="search" placeholder="Search courses" autocomplete="off"></label>
+        </section>
+
+        <section class="course-grid" id="courseGrid" aria-live="polite">
+          <article class="course-card reveal" data-category="intermediate" data-status="in-progress" data-search="travel english airport hotel restaurant travel">
+            <div class="course-cover cover-purple"><span class="course-cover-label">IN PROGRESS</span><i class="bi bi-airplane-engines-fill cover-main-icon"></i><span class="cover-word">TRAVEL</span></div>
+            <div class="course-body">
+              <div class="course-meta"><span>Intermediate</span><span>8 lessons</span></div>
+              <h3>Travel English</h3>
+              <p>Handle airports, hotels, restaurants, and everyday travel conversations.</p>
+              <div class="course-progress-row"><span>35% complete</span><strong>3 / 8</strong></div>
+              <div class="course-progress"><span style="width:35%"></span></div>
+              <button class="course-action primary" data-course="Travel English"><span>Resume course</span><i class="bi bi-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <article class="course-card reveal" data-category="beginner" data-status="available" data-search="daily english everyday conversation routine shopping food introduction">
+            <div class="course-cover cover-cyan"><span class="course-cover-label">POPULAR</span><i class="bi bi-chat-square-quote-fill cover-main-icon"></i><span class="cover-word">DAILY</span></div>
+            <div class="course-body">
+              <div class="course-meta"><span>Beginner</span><span>10 lessons</span></div>
+              <h3>Everyday Conversations</h3>
+              <p>Learn simple phrases for introductions, shopping, plans, and daily routines.</p>
+              <div class="course-progress-row"><span>Not started</span><strong>0 / 10</strong></div>
+              <div class="course-progress"><span style="width:0"></span></div>
+              <button class="course-action" data-course="Everyday Conversations"><span>Start course</span><i class="bi bi-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <article class="course-card reveal" data-category="beginner" data-status="available" data-search="vocabulary words word sprint common vocabulary memory">
+            <div class="course-cover cover-lime"><span class="course-cover-label">5 MIN / DAY</span><i class="bi bi-collection-fill cover-main-icon"></i><span class="cover-word">WORDS</span></div>
+            <div class="course-body">
+              <div class="course-meta"><span>Beginner</span><span>12 lessons</span></div>
+              <h3>Vocabulary Builder</h3>
+              <p>Grow your everyday vocabulary with short, focused word practice.</p>
+              <div class="course-progress-row"><span>Not started</span><strong>0 / 12</strong></div>
+              <div class="course-progress"><span style="width:0"></span></div>
+              <button class="course-action" data-course="Vocabulary Builder"><span>Start course</span><i class="bi bi-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <article class="course-card reveal" data-category="intermediate" data-status="available" data-search="speaking confidence conversation pronunciation fluency speaking practice">
+            <div class="course-cover cover-orange"><span class="course-cover-label">SPEAKING</span><i class="bi bi-mic-fill cover-main-icon"></i><span class="cover-word">VOICE</span></div>
+            <div class="course-body">
+              <div class="course-meta"><span>Intermediate</span><span>9 lessons</span></div>
+              <h3>Speak With Confidence</h3>
+              <p>Practice responses, pronunciation, and natural speaking patterns in context.</p>
+              <div class="course-progress-row"><span>Not started</span><strong>0 / 9</strong></div>
+              <div class="course-progress"><span style="width:0"></span></div>
+              <button class="course-action" data-course="Speak With Confidence"><span>Start course</span><i class="bi bi-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <article class="course-card reveal" data-category="intermediate" data-status="available" data-search="grammar sentence tense grammar checkpoint writing">
+            <div class="course-cover cover-blue"><span class="course-cover-label">CORE SKILL</span><i class="bi bi-braces cover-main-icon"></i><span class="cover-word">GRAMMAR</span></div>
+            <div class="course-body">
+              <div class="course-meta"><span>Intermediate</span><span>14 lessons</span></div>
+              <h3>Grammar In Context</h3>
+              <p>Build stronger sentences with practical grammar drills and checkpoints.</p>
+              <div class="course-progress-row"><span>Not started</span><strong>0 / 14</strong></div>
+              <div class="course-progress"><span style="width:0"></span></div>
+              <button class="course-action" data-course="Grammar In Context"><span>Start course</span><i class="bi bi-arrow-right"></i></button>
+            </div>
+          </article>
+
+          <article class="course-card reveal" data-category="beginner" data-status="available" data-search="listening audio native speaker comprehension listening practice">
+            <div class="course-cover cover-pink"><span class="course-cover-label">LISTENING</span><i class="bi bi-headphones cover-main-icon"></i><span class="cover-word">LISTEN</span></div>
+            <div class="course-body">
+              <div class="course-meta"><span>Beginner</span><span>7 lessons</span></div>
+              <h3>Listening Lab</h3>
+              <p>Train your ear with short conversations from real-life everyday situations.</p>
+              <div class="course-progress-row"><span>Not started</span><strong>0 / 7</strong></div>
+              <div class="course-progress"><span style="width:0"></span></div>
+              <button class="course-action" data-course="Listening Lab"><span>Start course</span><i class="bi bi-arrow-right"></i></button>
+            </div>
+          </article>
+        </section>
+
+        <div class="empty-courses" id="emptyCourses" hidden>
+          <div class="empty-icon"><i class="bi bi-search"></i></div>
+          <h3>No courses found</h3>
+          <p>Try another keyword or choose a different filter.</p>
+          <button class="btn btn-outline-primary" id="clearFiltersBtn">Clear filters</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/courses.js"></script>
+</body>
+</html>

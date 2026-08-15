@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LingoSphere — Practice English through real-life conversation simulations. Job interviews, travel, presentations, and more." />
+  <title>LingoSphere — Practice the moment. Master the language.</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- LingoSphere Styles -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/landing.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════ -->
+<nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand" href="index.html">
+      <span class="brand-dot"></span>
+      LingoSphere
+    </a>
+
+    <!-- Mobile Controls -->
+    <div class="d-flex align-items-center gap-2 d-lg-none">
+      <button class="btn-theme" data-theme-toggle data-theme-icon aria-label="Toggle theme">
+        <i class="bi bi-moon-fill"></i>
+      </button>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#mobileNav"
+              aria-controls="mobileNav"
+              aria-label="Open menu">
+        <i class="bi bi-list" style="font-size:1.3rem;"></i>
+      </button>
+    </div>
+
+    <!-- Desktop Nav -->
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#how-it-works">How It Works</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#scenarios">Scenarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="community.html">Community</a>
+        </li>
+      </ul>
+
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn-theme" data-theme-toggle data-theme-icon aria-label="Toggle theme">
+          <i class="bi bi-moon-fill"></i>
+        </button>
+        <a href="signin.html" class="btn btn-outline-primary btn-sm px-3">Sign In</a>
+        <a href="signup.html" class="btn btn-primary btn-sm px-3">Get Started</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Offcanvas Nav -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNav">
+  <div class="offcanvas-header">
+    <a class="navbar-brand" href="index.html">
+      <span class="brand-dot"></span>
+      LingoSphere
+    </a>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column">
+    <ul class="navbar-nav flex-column mb-auto">
+      <li><a class="nav-link" href="index.html"><i class="bi bi-house me-2"></i>Home</a></li>
+      <li><a class="nav-link" href="#how-it-works" data-bs-dismiss="offcanvas"><i class="bi bi-play-circle me-2"></i>How It Works</a></li>
+      <li><a class="nav-link" href="#scenarios" data-bs-dismiss="offcanvas"><i class="bi bi-grid me-2"></i>Scenarios</a></li>
+      <li><a class="nav-link" href="learning.html"><i class="bi bi-book me-2"></i>Learning</a></li>
+      <li><a class="nav-link" href="community.html"><i class="bi bi-people me-2"></i>Community</a></li>
+    </ul>
+    <div class="d-grid gap-2 mt-3 pb-2">
+      <a href="signin.html" class="btn btn-outline-primary">Sign In</a>
+      <a href="signup.html" class="btn btn-primary">Get Started — Free</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════════ -->
+<section class="hero-section">
+  <!-- Decorative orbs -->
+  <div class="ls-orb ls-orb-primary" style="width:500px;height:500px;top:-10%;right:-10%;opacity:0.6;"></div>
+  <div class="ls-orb ls-orb-secondary" style="width:400px;height:400px;bottom:-5%;left:-8%;opacity:0.5;"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center gy-5">
+
+      <!-- Left: Copy -->
+      <div class="col-lg-6">
+        <div class="reveal">
+          <div class="hero-eyebrow">
+            <span class="pulse-dot"></span>
+            AI-Powered English Learning
+          </div>
+        </div>
+
+        <h1 class="hero-title reveal reveal-delay-1">
+          Practice <em class="text-gradient">Real Conversations</em>,
+          Master English Faster
+        </h1>
+
+        <p class="hero-subtitle reveal reveal-delay-2">
+          Stop memorizing grammar rules. Start speaking. LingoSphere puts you in real-world scenarios — job interviews, travel, presentations — with instant AI feedback.
+        </p>
+
+        <div class="hero-cta-row reveal reveal-delay-3">
+          <a href="signup.html" class="btn btn-primary btn-lg" data-cta-start>
+            <i class="bi bi-play-fill me-1"></i>
+            Start for Free
+          </a>
+          <a href="#how-it-works" class="btn btn-outline-primary btn-lg">
+            See How It Works
+          </a>
+        </div>
+
+        <div class="hero-social-proof reveal reveal-delay-4">
+          <div class="hero-avatars">
+            <div class="avatar a1">JD</div>
+            <div class="avatar a2">SR</div>
+            <div class="avatar a3">AM</div>
+            <div class="avatar a4">KL</div>
+          </div>
+          <span><strong style="color:var(--text-primary);">12,400+</strong> learners already speaking confidently</span>
+        </div>
+      </div>
+
+      <!-- Right: Chat Widget -->
+      <div class="col-lg-6">
+        <div class="hero-visual reveal reveal-delay-2">
+
+          <!-- Floating badges -->
+          <div class="hero-badge-float badge-xp">
+            <div class="icon" style="background:rgba(163,230,53,0.15);color:#65A30D;">
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <div>
+              <div style="font-size:0.75rem;color:var(--text-muted);font-weight:500;">XP Earned</div>
+              <div style="font-size:1rem;color:var(--text-primary);">+150 XP</div>
+            </div>
+          </div>
+
+          <div class="hero-badge-float badge-streak">
+            <div class="icon" style="background:rgba(245,158,11,0.15);color:#D97706;">
+              <i class="bi bi-fire"></i>
+            </div>
+            <div>
+              <div style="font-size:0.75rem;color:var(--text-muted);font-weight:500;">Streak</div>
+              <div style="font-size:1rem;color:var(--text-primary);">8 days 🔥</div>
+            </div>
+          </div>
+
+          <div class="hero-badge-float badge-level">
+            <div class="icon" style="background:rgba(99,91,255,0.15);color:var(--primary);">
+              <i class="bi bi-trophy-fill"></i>
+            </div>
+            <div>
+              <div style="font-size:0.75rem;color:var(--text-muted);font-weight:500;">Level</div>
+              <div style="font-size:1rem;color:var(--text-primary);">04 Communicator</div>
+            </div>
+          </div>
+
+          <!-- Chat Widget -->
+          <div class="chat-widget">
+            <div class="chat-header">
+              <div class="chat-header-info">
+                <div class="chat-avatar">💼</div>
+                <div>
+                  <div class="chat-avatar-name">Job Interview</div>
+                  <div class="chat-avatar-role">HR Manager · TechCorp</div>
+                </div>
+              </div>
+              <div class="d-flex flex-column align-items-end gap-1">
+                <span class="chat-scenario-tag">JOB INTERVIEW</span>
+                <div class="chat-status">
+                  <div class="chat-status-dot"></div>
+                  Live
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-body">
+              <!-- Messages injected by JS -->
+            </div>
+
+            <div class="chat-footer">
+              <div class="chat-input-fake">Your response…</div>
+              <div class="chat-send-btn">
+                <i class="bi bi-send-fill"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="ls-divider" />
+
+
+<!-- ═══════════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════════ -->
+<section id="how-it-works" class="ls-section how-section">
+  <div class="container">
+
+    <div class="text-center mb-5 reveal">
+      <div class="ls-badge ls-badge-primary mb-3">
+        <i class="bi bi-lightning-charge-fill"></i>
+        The LingoSphere Method
+      </div>
+      <h2>Learning that <span class="text-gradient">actually works</span></h2>
+      <p class="mx-auto mt-3" style="max-width:520px;">
+        We throw you into the deep end — in the best way possible. Real simulations, real feedback, real progress.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4 reveal reveal-delay-1">
+        <div class="step-card">
+          <div class="step-icon-wrap" style="background:rgba(99,91,255,0.1);">
+            <span style="font-size:1.6rem;">🎯</span>
+            <div class="step-num">01</div>
+          </div>
+          <h5>Pick Your Scenario</h5>
+          <p>Choose from job interviews, travel situations, business presentations, or casual daily conversations.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal reveal-delay-2">
+        <div class="step-card">
+          <div class="step-icon-wrap" style="background:rgba(34,211,238,0.1);">
+            <span style="font-size:1.6rem;">💬</span>
+            <div class="step-num">02</div>
+          </div>
+          <h5>Start the Simulation</h5>
+          <p>Engage in a real conversation with our AI. No scripts, no memorization — just natural back-and-forth dialogue.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal reveal-delay-3">
+        <div class="step-card">
+          <div class="step-icon-wrap" style="background:rgba(163,230,53,0.1);">
+            <span style="font-size:1.6rem;">📈</span>
+            <div class="step-num">03</div>
+          </div>
+          <h5>Get Instant Feedback</h5>
+          <p>After each simulation, receive detailed feedback on grammar, vocabulary, fluency, and confidence. Earn XP and level up.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="ls-divider" />
+
+
+<!-- ═══════════════════════════════════════════
+     SCENARIOS
+═══════════════════════════════════════════ -->
+<section id="scenarios" class="ls-section">
+  <div class="container">
+
+    <div class="text-center mb-5 reveal">
+      <div class="ls-badge ls-badge-secondary mb-3">
+        <i class="bi bi-grid-fill"></i>
+        Simulation Scenarios
+      </div>
+      <h2>Every situation you'll <span class="text-gradient">ever need</span></h2>
+      <p class="mt-3 mx-auto" style="max-width:480px;">
+        From airport check-ins to board meetings — we've got the conversation you need to master.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Job Interview -->
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-1">
+        <div class="scenario-card sc-interview">
+          <div class="scenario-icon" style="background:rgba(99,91,255,0.1);">💼</div>
+          <h6>Job Interview</h6>
+          <p>Practice answering tough interview questions. Handle HR rounds, technical interviews, and behavioral questions like a pro.</p>
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="scenario-xp"><i class="bi bi-star-fill"></i> +150 XP</span>
+            <span class="ls-badge ls-badge-primary" style="font-size:0.72rem;">Popular</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Travel -->
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-2">
+        <div class="scenario-card sc-travel">
+          <div class="scenario-icon" style="background:rgba(34,211,238,0.1);">✈️</div>
+          <h6>Travel Simulation</h6>
+          <p>Navigate airports, hotels, restaurants, and tourist spots with confidence. From booking to check-out and everything in between.</p>
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="scenario-xp" style="color:var(--secondary);background:rgba(34,211,238,0.08);">
+              <i class="bi bi-star-fill"></i> +80 XP
+            </span>
+            <span class="ls-badge ls-badge-secondary" style="font-size:0.72rem;">Beginner Friendly</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Presentation -->
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-3">
+        <div class="scenario-card sc-present">
+          <div class="scenario-icon" style="background:rgba(163,230,53,0.1);">📊</div>
+          <h6>Presentation Skills</h6>
+          <p>Deliver pitches, explain data, and handle Q&A sessions in English. Build your professional speaking presence.</p>
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="scenario-xp" style="color:#65A30D;background:rgba(163,230,53,0.08);">
+              <i class="bi bi-star-fill"></i> +100 XP
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily Conversation -->
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-1">
+        <div class="scenario-card sc-daily">
+          <div class="scenario-icon" style="background:rgba(245,158,11,0.1);">☕</div>
+          <h6>Daily Conversation</h6>
+          <p>Small talk, social gatherings, weekend plans, and casual chats. Build fluency through the conversations you have every day.</p>
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="scenario-xp" style="color:#D97706;background:rgba(245,158,11,0.08);">
+              <i class="bi bi-star-fill"></i> +50 XP
+            </span>
+            <span class="ls-badge" style="background:rgba(245,158,11,0.1);color:#D97706;border-color:rgba(245,158,11,0.2);font-size:0.72rem;">Quick Session</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional English -->
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-2">
+        <div class="scenario-card sc-professional">
+          <div class="scenario-icon" style="background:rgba(168,85,247,0.1);">🏢</div>
+          <h6>Professional English</h6>
+          <p>Emails, meeting discussions, negotiations, and workplace communication. Speak like a native in any office environment.</p>
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="scenario-xp" style="color:#A855F7;background:rgba(168,85,247,0.08);">
+              <i class="bi bi-star-fill"></i> +120 XP
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Card -->
+      <div class="col-sm-6 col-lg-4 reveal reveal-delay-3">
+        <div class="scenario-card d-flex flex-column align-items-center justify-content-center text-center"
+             style="background:var(--grad-card);border-style:dashed;min-height:200px;"
+             onclick="window.location.href='signup.html'">
+          <div style="font-size:2.5rem;margin-bottom:0.75rem;">🚀</div>
+          <h6>More coming soon</h6>
+          <p style="font-size:0.82rem;">Job promotions, medical visits, customer service, debate practice, and more.</p>
+          <a href="signup.html" class="btn btn-primary btn-sm mt-1" onclick="event.stopPropagation()">
+            Join the waitlist
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="ls-divider" />
+
+
+<!-- ═══════════════════════════════════════════
+     STATS
+═══════════════════════════════════════════ -->
+<section class="stats-section ls-section">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 gap-md-0">
+
+      <div class="stat-item col-6 col-md-3 reveal reveal-delay-1">
+        <div class="stat-number" data-count="12400" data-suffix="+">0</div>
+        <div class="stat-label">Active Learners</div>
+      </div>
+
+      <div class="stat-divider d-none d-md-block"></div>
+
+      <div class="stat-item col-6 col-md-3 reveal reveal-delay-2">
+        <div class="stat-number" data-count="48" data-suffix="+">0</div>
+        <div class="stat-label">Simulation Scenarios</div>
+      </div>
+
+      <div class="stat-divider d-none d-md-block"></div>
+
+      <div class="stat-item col-6 col-md-3 reveal reveal-delay-3">
+        <div class="stat-number" data-count="4.9">0</div>
+        <div class="stat-label">Average App Rating</div>
+      </div>
+
+      <div class="stat-divider d-none d-md-block"></div>
+
+      <div class="stat-item col-6 col-md-3 reveal reveal-delay-4">
+        <div class="stat-number" data-count="92" data-suffix="%">0</div>
+        <div class="stat-label">Confidence Growth</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════ -->
+<section class="ls-section">
+  <div class="container">
+
+    <div class="text-center mb-5 reveal">
+      <div class="ls-badge ls-badge-accent mb-3">
+        <i class="bi bi-chat-quote-fill"></i>
+        Success Stories
+      </div>
+      <h2>Learners who <span class="text-gradient">leveled up</span></h2>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4 reveal reveal-delay-1">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p class="testimonial-text">
+            I practiced the job interview simulation every day for 2 weeks before my actual interview at a multinational company. I got the job! The feedback on my word choices was incredibly specific and helpful.
+          </p>
+          <div class="testimonial-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#635BFF,#818CF8);">RA</div>
+            <div>
+              <div class="testi-name">Rina Amelia</div>
+              <div class="testi-role">Software Engineer · Jakarta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal reveal-delay-2">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p class="testimonial-text">
+            I used the travel simulation before my solo trip to Europe. Ordering food, asking for directions, checking in at hostels — I felt so prepared. LingoSphere made it feel natural, not rehearsed.
+          </p>
+          <div class="testimonial-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#22D3EE,#0EA5E9);">BP</div>
+            <div>
+              <div class="testi-name">Bimo Prasetyo</div>
+              <div class="testi-role">Architecture Student · Bandung</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal reveal-delay-3">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <div class="testimonial-stars">
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p class="testimonial-text">
+            As a young professional, I needed to present in English for the first time at a regional conference. The presentation scenario helped me go from terrified to confident in just 3 weeks of daily practice.
+          </p>
+          <div class="testimonial-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#A3E635,#65A30D);">SD</div>
+            <div>
+              <div class="testi-name">Siti Dewi</div>
+              <div class="testi-role">Marketing Manager · Surabaya</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="ls-divider" />
+
+
+<!-- ═══════════════════════════════════════════
+     CTA SECTION
+═══════════════════════════════════════════ -->
+<section class="cta-section ls-section">
+  <div class="container">
+    <div class="cta-card reveal">
+
+      <div class="feature-chips">
+        <span class="feature-chip"><i class="bi bi-check-circle-fill me-1"></i> Free to Start</span>
+        <span class="feature-chip"><i class="bi bi-lightning-charge-fill me-1"></i> AI-Powered</span>
+        <span class="feature-chip"><i class="bi bi-phone-fill me-1"></i> Mobile-Friendly</span>
+        <span class="feature-chip"><i class="bi bi-shield-check-fill me-1"></i> No Credit Card</span>
+      </div>
+
+      <h2>Ready to speak with<br>confidence?</h2>
+      <p>Join thousands of learners who turned their fear of speaking English into their greatest strength. It starts with one conversation.</p>
+
+      <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <a href="signup.html" class="btn-cta-white">
+          <i class="bi bi-play-circle-fill"></i>
+          Start Your First Simulation
+        </a>
+        <a href="signin.html" class="btn-cta-outline-white">
+          Already have an account?
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="ls-footer">
+  <!-- Orb -->
+  <div class="ls-orb ls-orb-primary" style="width:300px;height:300px;top:-20%;right:10%;opacity:0.15;"></div>
+
+  <div class="container position-relative">
+    <div class="row g-4 mb-4">
+
+      <div class="col-lg-4">
+        <div class="footer-brand d-flex align-items-center gap-2 mb-3">
+          <span class="brand-dot"></span>
+          LingoSphere
+        </div>
+        <p style="font-size:0.88rem;max-width:280px;">
+          Practice the moment. Master the language. The smartest way to learn English through real-life conversation simulations.
+        </p>
+        <div class="footer-social mt-3">
+          <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <h6 class="mb-3" style="font-size:0.85rem;letter-spacing:0.05em;text-transform:uppercase;">Product</h6>
+        <a href="#scenarios">Scenarios</a>
+        <a href="learning.html">Learning</a>
+        <a href="community.html">Community</a>
+        <a href="#">Pricing</a>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <h6 class="mb-3" style="font-size:0.85rem;letter-spacing:0.05em;text-transform:uppercase;">Company</h6>
+        <a href="#">About Us</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <h6 class="mb-3" style="font-size:0.85rem;letter-spacing:0.05em;text-transform:uppercase;">Support</h6>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <h6 class="mb-3" style="font-size:0.85rem;letter-spacing:0.05em;text-transform:uppercase;">Levels</h6>
+        <a href="#">01 Explorer</a>
+        <a href="#">02 Traveler</a>
+        <a href="#">03 Speaker</a>
+        <a href="#">04 Communicator</a>
+        <a href="#">05 Fluent</a>
+      </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <p style="font-size:0.82rem;margin:0;">
+        © 2025 LingoSphere. Made with <span style="color:var(--primary);">♥</span> for English learners everywhere.
+      </p>
+      <div class="d-flex align-items-center gap-3" style="font-size:0.82rem;">
+        <a href="#" style="display:inline;margin:0;">Privacy</a>
+        <a href="#" style="display:inline;margin:0;">Terms</a>
+        <a href="#" style="display:inline;margin:0;">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast Container -->
+<div class="ls-toast-container"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- LingoSphere JS -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

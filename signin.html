@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in to LingoSphere and continue your English learning journey." />
+  <title>Sign In — LingoSphere</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- LingoSphere Styles -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+
+  <style>
+    /* ── Sign-in-specific left panel content ── */
+    .si-stat-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .si-stat {
+      flex: 1;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1rem;
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    .si-stat .num {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: var(--grad-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .si-stat .lbl {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* Profile preview card */
+    .si-profile-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      backdrop-filter: blur(10px);
+      margin-bottom: 1.25rem;
+    }
+
+    .si-profile-top {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .si-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--grad-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px rgba(99,91,255,0.3);
+    }
+
+    .si-profile-name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.15rem;
+    }
+
+    .si-profile-level {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .si-skill-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .si-skill-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .si-skill-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      width: 72px;
+      flex-shrink: 0;
+    }
+
+    .si-skill-bar-outer {
+      flex: 1;
+      height: 5px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .si-skill-bar-inner {
+      height: 100%;
+      border-radius: 3px;
+      background: var(--grad-primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 1.2s var(--ease-smooth);
+    }
+
+    .si-skill-bar-inner.animated {
+      transform: scaleX(1);
+    }
+
+    .si-skill-pct {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+      font-weight: 600;
+      width: 28px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* Streak & XP row */
+    .si-streak-row {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .si-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .si-pill-fire {
+      background: rgba(245,158,11,0.15);
+      color: #F59E0B;
+      border: 1px solid rgba(245,158,11,0.25);
+    }
+
+    .si-pill-xp {
+      background: rgba(99,91,255,0.15);
+      color: var(--primary-light);
+      border: 1px solid rgba(99,91,255,0.25);
+    }
+
+    /* Demo banner */
+    .demo-banner {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: rgba(163,230,53,0.08);
+      border: 1px solid rgba(163,230,53,0.2);
+      border-radius: var(--radius-md);
+      margin-bottom: 1.5rem;
+    }
+
+    .demo-banner-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      background: rgba(163,230,53,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #65A30D;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    [data-theme="dark"] .demo-banner-icon { color: var(--accent); }
+
+    .demo-banner-text {
+      flex: 1;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .demo-banner-text strong {
+      color: var(--text-primary);
+      display: block;
+      margin-bottom: 0.1rem;
+      font-size: 0.84rem;
+    }
+
+    .btn-demo-fill {
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-pill);
+      background: rgba(163,230,53,0.15);
+      border: 1px solid rgba(163,230,53,0.3);
+      color: #65A30D;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--t-fast);
+      white-space: nowrap;
+      font-family: var(--font-body);
+    }
+
+    [data-theme="dark"] .btn-demo-fill { color: var(--accent); }
+
+    .btn-demo-fill:hover {
+      background: rgba(163,230,53,0.25);
+    }
+
+    /* Sign in button */
+    .btn-signin {
+      width: 100%;
+      padding: 0.9rem 1.5rem;
+      background: var(--grad-primary);
+      border: none;
+      border-radius: var(--radius-pill);
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all var(--t-base);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 16px rgba(99,91,255,0.35);
+      margin-top: 0.5rem;
+    }
+
+    .btn-signin:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(99,91,255,0.45);
+    }
+
+    .btn-signin:active { transform: translateY(0); }
+
+    .btn-signin:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Forgot password modal */
+    .forgot-modal .modal-content {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .forgot-modal .modal-header {
+      border-bottom: 1px solid var(--bg-border);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .forgot-modal .modal-footer {
+      border-top: 1px solid var(--bg-border);
+      padding: 1rem 1.5rem;
+    }
+
+    .forgot-modal .modal-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* Spinner override */
+    .spinner-border-sm {
+      width: 1em;
+      height: 1em;
+      border-width: 0.15em;
+    }
+
+    /* General error */
+    #si-general-error {
+      font-size: 0.82rem;
+      color: #EF4444;
+      padding: 0.65rem 0.9rem;
+      background: rgba(239,68,68,0.07);
+      border: 1px solid rgba(239,68,68,0.15);
+      border-radius: var(--radius-sm);
+      display: none;
+      margin-bottom: 0.75rem;
+    }
+
+    #si-general-error.show { display: block; }
+
+    /* Welcome back accent line */
+    .si-accent-line {
+      width: 40px;
+      height: 4px;
+      background: var(--grad-primary);
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="auth-page">
+
+  <!-- ─── LEFT PANEL ─── -->
+  <aside class="auth-panel-left">
+    <div class="auth-orb auth-orb-1"></div>
+    <div class="auth-orb auth-orb-2"></div>
+    <div class="auth-orb auth-orb-3"></div>
+
+    <!-- Brand -->
+    <div style="position:relative;z-index:2;">
+      <a href="index.html" class="brand-link">
+        <span class="brand-dot"></span>
+        LingoSphere
+      </a>
+    </div>
+
+    <!-- Main content -->
+    <div class="auth-left-content" style="position:relative;z-index:2;">
+
+      <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem;font-weight:600;">
+        Welcome back
+      </p>
+
+      <h2 class="auth-left-tagline">
+        Pick up exactly<br>where you <span style="background:var(--grad-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">left off.</span>
+      </h2>
+
+      <p class="auth-left-sub">
+        Your progress, streak, and learning path are waiting. Every day you practice brings you closer to fluency.
+      </p>
+
+      <!-- Demo user profile preview -->
+      <div class="si-profile-card">
+        <div class="si-profile-top">
+          <div class="si-avatar">AM</div>
+          <div>
+            <div class="si-profile-name">Alex Morgan</div>
+            <div class="si-profile-level">Level 04 · Communicator</div>
+          </div>
+        </div>
+
+        <div class="si-streak-row mb-3">
+          <div class="si-pill si-pill-fire">
+            <i class="bi bi-fire"></i> 8-day streak
+          </div>
+          <div class="si-pill si-pill-xp">
+            <i class="bi bi-star-fill"></i> 1,240 XP
+          </div>
+        </div>
+
+        <div class="si-skill-row">
+          <div class="si-skill-item">
+            <span class="si-skill-label">Speaking</span>
+            <div class="si-skill-bar-outer">
+              <div class="si-skill-bar-inner" style="width:82%"></div>
+            </div>
+            <span class="si-skill-pct">82%</span>
+          </div>
+          <div class="si-skill-item">
+            <span class="si-skill-label">Vocabulary</span>
+            <div class="si-skill-bar-outer">
+              <div class="si-skill-bar-inner" style="width:74%"></div>
+            </div>
+            <span class="si-skill-pct">74%</span>
+          </div>
+          <div class="si-skill-item">
+            <span class="si-skill-label">Grammar</span>
+            <div class="si-skill-bar-outer">
+              <div class="si-skill-bar-inner" style="width:91%"></div>
+            </div>
+            <span class="si-skill-pct">91%</span>
+          </div>
+          <div class="si-skill-item">
+            <span class="si-skill-label">Confidence</span>
+            <div class="si-skill-bar-outer">
+              <div class="si-skill-bar-inner" style="width:88%"></div>
+            </div>
+            <span class="si-skill-pct">88%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="si-stat-row">
+        <div class="si-stat">
+          <div class="num">18</div>
+          <div class="lbl">Lessons done</div>
+        </div>
+        <div class="si-stat">
+          <div class="num">8🔥</div>
+          <div class="lbl">Day streak</div>
+        </div>
+        <div class="si-stat">
+          <div class="num">1.2K</div>
+          <div class="lbl">XP earned</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div style="position:relative;z-index:2;">
+      <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);">
+        © 2025 LingoSphere · <a href="#" style="color:rgba(255,255,255,0.4);">Privacy</a> · <a href="#" style="color:rgba(255,255,255,0.4);">Terms</a>
+      </p>
+    </div>
+  </aside>
+
+
+  <!-- ─── RIGHT PANEL: Form ─── -->
+  <main class="auth-panel-right">
+
+    <!-- Mobile top nav -->
+    <div class="auth-mobile-brand">
+      <a href="index.html" class="auth-mobile-logo">
+        <span class="brand-dot"></span>
+        LingoSphere
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn-theme" data-theme-toggle data-theme-icon aria-label="Toggle theme">
+          <i class="bi bi-moon-fill"></i>
+        </button>
+        <a href="signup.html" style="font-size:0.85rem;font-weight:600;color:var(--primary);">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="auth-form-container">
+
+      <!-- Heading -->
+      <div class="si-accent-line"></div>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:-0.02em;margin-bottom:0.35rem;">
+        Welcome back
+      </h2>
+      <p style="font-size:0.92rem;margin-bottom:2rem;">
+        Sign in to continue your English journey.
+      </p>
+
+      <!-- Demo banner -->
+      <div class="demo-banner">
+        <div class="demo-banner-icon">
+          <i class="bi bi-play-circle-fill"></i>
+        </div>
+        <div class="demo-banner-text">
+          <strong>Try the demo account</strong>
+          Any email + password (8+ chars) will work
+        </div>
+        <button class="btn-demo-fill" data-demo-fill type="button">
+          Auto-fill
+        </button>
+      </div>
+
+      <!-- Social buttons -->
+      <div class="d-flex gap-2 mb-1">
+        <button class="btn-social" type="button"
+          onclick="window.LS?.Toast.show({title:'Coming Soon',message:'Social login will be available soon.',type:'info'})">
+          <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          Continue with Google
+        </button>
+        <button class="btn-social" type="button"
+          onclick="window.LS?.Toast.show({title:'Coming Soon',message:'Apple login will be available soon.',type:'info'})">
+          <i class="bi bi-apple" style="font-size:1.1rem;"></i>
+        </button>
+      </div>
+
+      <div class="auth-divider">or sign in with email</div>
+
+      <!-- General error -->
+      <div id="si-general-error" role="alert"></div>
+
+      <!-- Form -->
+      <form class="signin-form signin-form-el" novalidate>
+
+        <div class="ls-form-group">
+          <label class="ls-label" for="si-email">Email Address</label>
+          <input
+            type="email"
+            id="si-email"
+            class="ls-input"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+          <div class="form-error" id="si-email-error"></div>
+        </div>
+
+        <div class="ls-form-group">
+          <div class="d-flex justify-content-between align-items-center mb-2" style="margin-bottom:0 !important;">
+            <label class="ls-label mb-0" for="si-password">Password</label>
+            <a href="#" class="forgot-link" data-bs-toggle="modal" data-bs-target="#forgotModal">
+              Forgot password?
+            </a>
+          </div>
+          <div class="input-pw-wrap" style="margin-top:0.45rem;">
+            <input
+              type="password"
+              id="si-password"
+              class="ls-input"
+              placeholder="Your password"
+              autocomplete="current-password"
+              required
+            />
+            <button class="btn-pw-toggle" type="button" aria-label="Toggle password visibility">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+          <div class="form-error" id="si-password-error"></div>
+        </div>
+
+        <!-- Remember me -->
+        <div class="d-flex align-items-center gap-2 mb-1" style="margin-top:0.25rem;">
+          <input type="checkbox" id="si-remember" style="accent-color:var(--primary);cursor:pointer;" />
+          <label for="si-remember" style="font-size:0.83rem;color:var(--text-secondary);cursor:pointer;">
+            Keep me signed in
+          </label>
+        </div>
+
+        <button type="submit" class="btn-signin">
+          <i class="bi bi-arrow-right-circle-fill"></i>
+          Sign In
+        </button>
+
+      </form>
+
+      <!-- Footer note -->
+      <p class="auth-footer-note">
+        Don't have an account? <a href="signup.html">Sign up for free</a>
+      </p>
+
+      <!-- Divider -->
+      <div class="auth-divider" style="margin-top:2rem;">or continue as</div>
+
+      <!-- Guest mode -->
+      <button
+        class="btn-social"
+        type="button"
+        id="btn-guest"
+        style="border-style:dashed;"
+      >
+        <i class="bi bi-person-dash" style="font-size:1.1rem;color:var(--text-muted);"></i>
+        <span>Browse as Guest</span>
+        <span class="ls-badge ls-badge-primary ms-auto" style="font-size:0.7rem;">Limited</span>
+      </button>
+
+    </div>
+  </main>
+
+</div><!-- /.auth-page -->
+
+
+<!-- ═══════════════════════════════════════════
+     FORGOT PASSWORD MODAL
+═══════════════════════════════════════════ -->
+<div class="modal fade forgot-modal" id="forgotModal" tabindex="-1" aria-labelledby="forgotModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width:420px;">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="forgotModalLabel">
+          <i class="bi bi-lock-fill me-2" style="color:var(--primary);"></i>
+          Reset Password
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body" style="padding:1.5rem;">
+        <div id="forgot-default">
+          <p style="font-size:0.88rem;color:var(--text-secondary);margin-bottom:1.25rem;">
+            Enter your email and we'll send you a reset link. (This is a demo — no actual email will be sent.)
+          </p>
+          <div class="ls-form-group mb-0">
+            <label class="ls-label" for="forgot-email">Email Address</label>
+            <input type="email" id="forgot-email" class="ls-input" placeholder="you@example.com" />
+          </div>
+        </div>
+        <!-- Success state (hidden by default) -->
+        <div id="forgot-success" style="display:none;text-align:center;padding:1rem 0;">
+          <div style="font-size:2.5rem;margin-bottom:0.75rem;">📬</div>
+          <h6 style="font-family:var(--font-heading);margin-bottom:0.4rem;">Check your inbox</h6>
+          <p style="font-size:0.85rem;color:var(--text-secondary);">
+            If that email exists, a reset link is on its way. (Demo mode — nothing was actually sent.)
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-footer" id="forgot-footer">
+        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary btn-sm px-4" id="btn-forgot-submit">
+          Send Reset Link
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Toast Container -->
+<div class="ls-toast-container"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- LingoSphere JS -->
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ── Animate skill bars on load ── */
+  setTimeout(() => {
+    document.querySelectorAll('.si-skill-bar-inner').forEach(bar => {
+      bar.classList.add('animated');
+    });
+  }, 400);
+
+  /* ── Guest mode ── */
+  document.getElementById('btn-guest')?.addEventListener('click', () => {
+    window.LS?.Toast.show({
+      title: 'Guest Mode',
+      message: 'Browsing with limited access. Sign up to save progress.',
+      type: 'info',
+      duration: 4000,
+    });
+    setTimeout(() => { window.location.href = 'learning.html'; }, 1200);
+  });
+
+  /* ── Forgot password modal ── */
+  document.getElementById('btn-forgot-submit')?.addEventListener('click', () => {
+    const email = document.getElementById('forgot-email')?.value.trim();
+    if (!email || !email.includes('@')) {
+      window.LS?.Toast.show({ title: 'Enter a valid email', type: 'warning' });
+      return;
+    }
+
+    const btn = document.getElementById('btn-forgot-submit');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Sending…';
+
+    setTimeout(() => {
+      document.getElementById('forgot-default').style.display = 'none';
+      document.getElementById('forgot-success').style.display = 'block';
+      document.getElementById('forgot-footer').style.display = 'none';
+
+      window.LS?.Toast.show({
+        title: 'Reset link sent',
+        message: `Check ${email} (demo — nothing actually sent)`,
+        type: 'success',
+      });
+    }, 1400);
+  });
+
+  /* ── Reset modal state when reopened ── */
+  document.getElementById('forgotModal')?.addEventListener('hidden.bs.modal', () => {
+    document.getElementById('forgot-default').style.display = 'block';
+    document.getElementById('forgot-success').style.display = 'none';
+    document.getElementById('forgot-footer').style.display = 'flex';
+    const btn = document.getElementById('btn-forgot-submit');
+    if (btn) { btn.disabled = false; btn.textContent = 'Send Reset Link'; }
+    const input = document.getElementById('forgot-email');
+    if (input) input.value = '';
+  });
+
+  /* ── If already logged in, show continue banner ── */
+  if (window.LS?.Auth.isLoggedIn()) {
+    const user = window.LS.Auth.getUser();
+    const banner = document.createElement('div');
+    banner.style.cssText = `
+      position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);
+      background:var(--bg-card);border:1px solid var(--bg-border);
+      border-radius:var(--radius-pill);padding:0.65rem 1.25rem;
+      box-shadow:var(--shadow-lg);display:flex;align-items:center;
+      gap:0.75rem;z-index:500;font-size:0.88rem;white-space:nowrap;
+    `;
+    banner.innerHTML = `
+      <i class="bi bi-person-check-fill" style="color:var(--primary);"></i>
+      Signed in as <strong style="color:var(--text-primary);">${user.name}</strong>
+      <a href="learning.html" class="btn btn-primary btn-sm ms-1">Continue →</a>
+    `;
+    document.body.appendChild(banner);
+    setTimeout(() => banner.remove(), 6000);
+  }
+
+});
+</script>
+
+</body>
+</html>
