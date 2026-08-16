@@ -230,7 +230,7 @@
                         <div class="stat-icon icon-purple"><i class="bi bi-fire"></i></div>
                         <div>
                             <span>Current streak</span>
-                            <strong><span id="statStreak">8</span> days</strong>
+                            <strong id="dayStreak"><span id="statStreak"></span>days</strong>
                             <small><i class="bi bi-arrow-up-right"></i> Best: 12 days</small>
                         </div>
                     </article>
@@ -371,7 +371,7 @@
             document.getElementById('topbarAvatar').textContent = initials;
             document.getElementById('heroXp').textContent = Number(user.xp || 1240).toLocaleString();
             document.getElementById('heroLevel').textContent = String(user.level || 4).padStart(2, '0');
-            document.getElementById('statStreak').textContent = user.streak || 8;
+            document.getElementById('dayStreak').textContent = user.streak || "8 Days";
             document.getElementById('statLessons').textContent = user.completedLessons || 18;
 
             const sidebar = document.getElementById('learningSidebar');

@@ -1049,3 +1049,72 @@
         padding: 14px;
     }
 }
+/* ─────────────────────────────────────────────
+   LESSON INTERACTION STATES
+   ───────────────────────────────────────────── */
+
+.answer-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+}
+
+.answer-letter {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--bg-border);
+    border-radius: 9px;
+    background: var(--bg-subtle);
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-size: .7rem;
+    font-weight: 800;
+}
+
+.answer-btn.selected .answer-letter {
+    color: var(--primary);
+    border-color: rgba(99, 91, 255, .3);
+    background: var(--primary-light);
+}
+
+.answer-btn.correct .answer-letter {
+    color: #fff;
+    border-color: #16a34a;
+    background: #16a34a;
+}
+
+.answer-btn.wrong .answer-letter {
+    color: #fff;
+    border-color: #dc2626;
+    background: #dc2626;
+}
+
+.primary-btn.retry {
+    background: var(--bg-subtle);
+    color: var(--text-primary);
+    border-color: var(--bg-border);
+}
+
+.primary-btn.retry:hover {
+    background: var(--bg-border);
+    color: var(--text-primary);
+}
+
+.answer-btn:disabled {
+    cursor: default;
+}
+
+.lesson-item:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+.bookmark-btn[aria-pressed="true"] {
+    color: var(--primary);
+    background: var(--primary-light);
+    border-color: rgba(99, 91, 255, .22);
+}

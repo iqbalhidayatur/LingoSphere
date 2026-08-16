@@ -239,9 +239,19 @@
     font-weight: 800;
 }
 
-.gradient-avatar {
-    background: var(--grad-primary);
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: white;
 }
+
+.avatar-gradient { background: var(--grad-primary); box-shadow: var(--shadow-glow); }
 
 .accent-avatar {
     background: var(--grad-accent);
