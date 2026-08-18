@@ -9,7 +9,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -40,7 +40,7 @@
 
     .si-stat .num {
       font-family: var(--font-heading);
-      font-size: 1.4rem;
+      font-size: 1.82rem;
       font-weight: 800;
       background: var(--grad-primary);
       -webkit-background-clip: text;
@@ -51,7 +51,7 @@
     }
 
     .si-stat .lbl {
-      font-size: 0.72rem;
+      font-size: 0.936rem;
       color: rgba(255,255,255,0.4);
     }
 
@@ -82,7 +82,7 @@
       justify-content: center;
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.3rem;
       color: #fff;
       flex-shrink: 0;
       box-shadow: 0 0 0 3px rgba(99,91,255,0.3);
@@ -91,13 +91,13 @@
     .si-profile-name {
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.3rem;
       color: #fff;
       margin-bottom: 0.15rem;
     }
 
     .si-profile-level {
-      font-size: 0.75rem;
+      font-size: 0.975rem;
       color: rgba(255,255,255,0.45);
     }
 
@@ -114,7 +114,7 @@
     }
 
     .si-skill-label {
-      font-size: 0.75rem;
+      font-size: 0.975rem;
       color: rgba(255,255,255,0.5);
       width: 72px;
       flex-shrink: 0;
@@ -142,7 +142,7 @@
     }
 
     .si-skill-pct {
-      font-size: 0.72rem;
+      font-size: 0.936rem;
       color: rgba(255,255,255,0.4);
       font-weight: 600;
       width: 28px;
@@ -162,7 +162,7 @@
       gap: 0.35rem;
       padding: 0.35rem 0.8rem;
       border-radius: var(--radius-pill);
-      font-size: 0.78rem;
+      font-size: 1.014rem;
       font-weight: 600;
     }
 
@@ -199,7 +199,7 @@
       align-items: center;
       justify-content: center;
       color: #65A30D;
-      font-size: 0.9rem;
+      font-size: 1.17rem;
       flex-shrink: 0;
     }
 
@@ -207,7 +207,7 @@
 
     .demo-banner-text {
       flex: 1;
-      font-size: 0.82rem;
+      font-size: 1.066rem;
       color: var(--text-secondary);
       line-height: 1.4;
     }
@@ -216,7 +216,7 @@
       color: var(--text-primary);
       display: block;
       margin-bottom: 0.1rem;
-      font-size: 0.84rem;
+      font-size: 1.092rem;
     }
 
     .btn-demo-fill {
@@ -225,7 +225,7 @@
       background: rgba(163,230,53,0.15);
       border: 1px solid rgba(163,230,53,0.3);
       color: #65A30D;
-      font-size: 0.78rem;
+      font-size: 1.014rem;
       font-weight: 700;
       cursor: pointer;
       transition: all var(--t-fast);
@@ -249,7 +249,7 @@
       color: #fff;
       font-family: var(--font-body);
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.3rem;
       cursor: pointer;
       transition: all var(--t-base);
       display: flex;
@@ -306,7 +306,7 @@
 
     /* General error */
     #si-general-error {
-      font-size: 0.82rem;
+      font-size: 1.066rem;
       color: #EF4444;
       padding: 0.65rem 0.9rem;
       background: rgba(239,68,68,0.07);
@@ -327,6 +327,11 @@
       margin-bottom: 1.25rem;
     }
   </style>
+<!-- LingoSphere typography consistency -->
+    <style id="lingosphere-typography-consistency">
+      body, body * { font-family: var(--font-body); }
+      h1, h2, h3, h4, h5, h6, .navbar-brand, .brand, .logo, .display-font { font-family: var(--font-heading); }
+    </style>
 </head>
 <body>
 
@@ -349,7 +354,7 @@
     <!-- Main content -->
     <div class="auth-left-content" style="position:relative;z-index:2;">
 
-      <p style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem;font-weight:600;">
+      <p style="font-size:0.975rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem;font-weight:600;">
         Welcome back
       </p>
 
@@ -432,7 +437,7 @@
 
     <!-- Footer -->
     <div style="position:relative;z-index:2;">
-      <p style="font-size:0.78rem;color:rgba(255,255,255,0.3);">
+      <p style="font-size:1.014rem;color:rgba(255,255,255,0.3);">
         © 2025 LingoSphere · <a href="#" style="color:rgba(255,255,255,0.4);">Privacy</a> · <a href="#" style="color:rgba(255,255,255,0.4);">Terms</a>
       </p>
     </div>
@@ -452,7 +457,7 @@
         <button class="btn-theme" data-theme-toggle data-theme-icon aria-label="Toggle theme">
           <i class="bi bi-moon-fill"></i>
         </button>
-        <a href="signup.html" style="font-size:0.85rem;font-weight:600;color:var(--primary);">Sign Up</a>
+        <a href="signup.html" style="font-size:1.105rem;font-weight:600;color:var(--primary);">Sign Up</a>
       </div>
     </div>
 
@@ -460,10 +465,10 @@
 
       <!-- Heading -->
       <div class="si-accent-line"></div>
-      <h2 style="font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:-0.02em;margin-bottom:0.35rem;">
+      <h2 style="font-size:clamp(2.08rem,3vw,2.73rem);letter-spacing:-0.02em;margin-bottom:0.35rem;">
         Welcome back
       </h2>
-      <p style="font-size:0.92rem;margin-bottom:2rem;">
+      <p style="font-size:1.196rem;margin-bottom:2rem;">
         Sign in to continue your English journey.
       </p>
 
@@ -495,7 +500,7 @@
         </button>
         <button class="btn-social" type="button"
           onclick="window.LS?.Toast.show({title:'Coming Soon',message:'Apple login will be available soon.',type:'info'})">
-          <i class="bi bi-apple" style="font-size:1.1rem;"></i>
+          <i class="bi bi-apple" style="font-size:1.43rem;"></i>
         </button>
       </div>
 
@@ -546,7 +551,7 @@
         <!-- Remember me -->
         <div class="d-flex align-items-center gap-2 mb-1" style="margin-top:0.25rem;">
           <input type="checkbox" id="si-remember" style="accent-color:var(--primary);cursor:pointer;" />
-          <label for="si-remember" style="font-size:0.83rem;color:var(--text-secondary);cursor:pointer;">
+          <label for="si-remember" style="font-size:1.079rem;color:var(--text-secondary);cursor:pointer;">
             Keep me signed in
           </label>
         </div>
@@ -573,9 +578,9 @@
         id="btn-guest"
         style="border-style:dashed;"
       >
-        <i class="bi bi-person-dash" style="font-size:1.1rem;color:var(--text-muted);"></i>
+        <i class="bi bi-person-dash" style="font-size:1.43rem;color:var(--text-muted);"></i>
         <span>Browse as Guest</span>
-        <span class="ls-badge ls-badge-primary ms-auto" style="font-size:0.7rem;">Limited</span>
+        <span class="ls-badge ls-badge-primary ms-auto" style="font-size:0.91rem;">Limited</span>
       </button>
 
     </div>
@@ -601,7 +606,7 @@
 
       <div class="modal-body" style="padding:1.5rem;">
         <div id="forgot-default">
-          <p style="font-size:0.88rem;color:var(--text-secondary);margin-bottom:1.25rem;">
+          <p style="font-size:1.144rem;color:var(--text-secondary);margin-bottom:1.25rem;">
             Enter your email and we'll send you a reset link. (This is a demo — no actual email will be sent.)
           </p>
           <div class="ls-form-group mb-0">
@@ -611,9 +616,9 @@
         </div>
         <!-- Success state (hidden by default) -->
         <div id="forgot-success" style="display:none;text-align:center;padding:1rem 0;">
-          <div style="font-size:2.5rem;margin-bottom:0.75rem;">📬</div>
+          <div style="font-size:3.25rem;margin-bottom:0.75rem;">📬</div>
           <h6 style="font-family:var(--font-heading);margin-bottom:0.4rem;">Check your inbox</h6>
-          <p style="font-size:0.85rem;color:var(--text-secondary);">
+          <p style="font-size:1.105rem;color:var(--text-secondary);">
             If that email exists, a reset link is on its way. (Demo mode — nothing was actually sent.)
           </p>
         </div>
@@ -706,7 +711,7 @@ document.addEventListener('DOMContentLoaded', () => {
       background:var(--bg-card);border:1px solid var(--bg-border);
       border-radius:var(--radius-pill);padding:0.65rem 1.25rem;
       box-shadow:var(--shadow-lg);display:flex;align-items:center;
-      gap:0.75rem;z-index:500;font-size:0.88rem;white-space:nowrap;
+      gap:0.75rem;z-index:500;font-size:1.144rem;white-space:nowrap;
     `;
     banner.innerHTML = `
       <i class="bi bi-person-check-fill" style="color:var(--primary);"></i>

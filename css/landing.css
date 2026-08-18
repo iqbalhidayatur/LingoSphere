@@ -30,7 +30,7 @@
   border-radius: var(--radius-pill);
   background: rgba(99,91,255,0.08);
   border: 1px solid rgba(99,91,255,0.18);
-  font-size: 0.82rem;
+  font-size:0.8528rem;
   font-weight: 600;
   color: var(--primary);
   letter-spacing: 0.04em;
@@ -52,7 +52,7 @@
 }
 
 .hero-title {
-  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-size:clamp(1.768rem, 3.2vw, 2.236rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -83,7 +83,7 @@
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-size:clamp(0.9568rem, 1.44vw, 1.092rem);
   color: var(--text-secondary);
   max-width: 480px;
   margin-bottom: 2rem;
@@ -102,7 +102,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 0.85rem;
+  font-size:0.884rem;
   color: var(--text-muted);
 }
 
@@ -119,7 +119,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
+  font-size:0.728rem;
   font-weight: 700;
   color: #fff;
 }
@@ -183,19 +183,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size:0.988rem;
   flex-shrink: 0;
 }
 
 .chat-avatar-name {
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size:0.624rem;
   color: var(--text-primary);
 }
 
 .chat-avatar-role {
-  font-size: 0.75rem;
+  font-size:0.624rem;
   color: var(--text-secondary);
 }
 
@@ -203,7 +203,7 @@
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.75rem;
+  font-size:0.624rem;
   color: #22C55E;
   font-weight: 500;
 }
@@ -224,7 +224,7 @@
 .chat-scenario-tag {
   padding: 0.2rem 0.75rem;
   border-radius: var(--radius-pill);
-  font-size: 0.73rem;
+  font-size:0.624rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   background: rgba(99,91,255,0.1);
@@ -263,7 +263,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size:0.624rem;
   font-weight: 700;
   color: #fff;
 }
@@ -277,7 +277,7 @@
   max-width: 72%;
   padding: 0.65rem 0.9rem;
   border-radius: 14px;
-  font-size: 0.85rem;
+  font-size:0.884rem;
   line-height: 1.5;
   color: var(--text-primary);
 }
@@ -334,7 +334,7 @@
   background: var(--bg-subtle);
   border: 1px solid var(--bg-border);
   border-radius: var(--radius-pill);
-  font-size: 0.82rem;
+  font-size:0.8528rem;
   color: var(--text-muted);
   cursor: default;
 }
@@ -348,7 +348,7 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 0.85rem;
+  font-size:0.884rem;
   flex-shrink: 0;
   transition: transform var(--t-fast);
   cursor: pointer;
@@ -367,7 +367,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.8rem;
+  font-size:0.832rem;
   font-weight: 600;
   color: var(--text-primary);
   white-space: nowrap;
@@ -390,7 +390,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size:0.936rem;
 }
 
 .badge-xp   { top: 5%; right: -5%; }
@@ -441,7 +441,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size:0.988rem;
   margin: 0 auto 1.25rem;
   position: relative;
 }
@@ -464,7 +464,7 @@
   border-radius: 50%;
   background: var(--bg-card);
   border: 2px solid var(--bg-border);
-  font-size: 0.7rem;
+  font-size:0.624rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -475,12 +475,12 @@
 }
 
 .step-card h5 {
-  font-size: 1.05rem;
+  font-size:1.0192rem;
   margin-bottom: 0.6rem;
 }
 
 .step-card p {
-  font-size: 0.87rem;
+  font-size:0.9048rem;
 }
 
 /* ── Scenarios Section ── */
@@ -526,7 +526,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size:1.3rem;
   margin-bottom: 1rem;
   flex-shrink: 0;
   position: relative;
@@ -534,14 +534,14 @@
 }
 
 .scenario-card h6 {
-  font-size: 1rem;
+  font-size:0.988rem;
   margin-bottom: 0.35rem;
   position: relative;
   z-index: 1;
 }
 
 .scenario-card p {
-  font-size: 0.82rem;
+  font-size:0.8528rem;
   margin-bottom: 0.75rem;
   flex: 1;
   position: relative;
@@ -552,7 +552,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.78rem;
+  font-size:0.8112rem;
   font-weight: 700;
   color: var(--primary);
   background: rgba(99,91,255,0.08);
@@ -590,7 +590,7 @@
 
 .stat-number {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size:clamp(1.768rem, 3.2vw, 2.444rem);
   font-weight: 800;
   background: var(--grad-primary);
   -webkit-background-clip: text;
@@ -602,7 +602,7 @@
 
 .stat-label {
   color: rgba(255,255,255,0.55);
-  font-size: 0.9rem;
+  font-size:0.936rem;
 }
 
 .stat-divider {
@@ -633,9 +633,9 @@
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  font-size: 2.5rem;
+  font-size:2.6rem;
   color: rgba(99,91,255,0.12);
-  font-family: serif;
+  font-family: var(--font-heading);
   line-height: 1;
 }
 
@@ -645,10 +645,10 @@
   margin-bottom: 0.9rem;
 }
 
-.testimonial-stars i { color: #F59E0B; font-size: 0.85rem; }
+.testimonial-stars i { color: #F59E0B; font-size:0.884rem; }
 
 .testimonial-text {
-  font-size: 0.9rem;
+  font-size:0.936rem;
   line-height: 1.7;
   margin-bottom: 1.25rem;
   color: var(--text-secondary);
@@ -668,19 +668,19 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size:0.884rem;
   color: #fff;
   flex-shrink: 0;
 }
 
 .testi-name {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size:0.936rem;
   color: var(--text-primary);
 }
 
 .testi-role {
-  font-size: 0.78rem;
+  font-size:0.8112rem;
   color: var(--text-muted);
 }
 
@@ -725,7 +725,7 @@
 
 .cta-card h2 {
   color: #fff;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size:clamp(1.664rem, 2.8vw, 2.288rem);
   margin-bottom: 1rem;
   position: relative;
   z-index: 1;
@@ -798,7 +798,7 @@
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.2);
   color: #fff;
-  font-size: 0.82rem;
+  font-size:0.8528rem;
   font-weight: 500;
   backdrop-filter: blur(8px);
 }
@@ -811,7 +811,7 @@
   }
 
   .hero-title {
-    font-size: clamp(1.9rem, 7vw, 2.5rem);
+    font-size:clamp(1.976rem, 5.6vw, 2.6rem);
   }
 
   .hero-visual {
@@ -838,7 +838,9 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .hero-title { font-size: clamp(2rem, 4.5vw, 3rem); }
+  .hero-title { font-size:clamp(1.768rem, 3.2vw, 2.444rem); }
 
   .badge-streak, .badge-level { display: none; }
 }
+/* Keep decorative quote in the same font system */
+.testimonial-quote { font-family: var(--font-heading); }

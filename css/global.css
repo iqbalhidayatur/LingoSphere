@@ -47,8 +47,8 @@
   --shadow-glow-c:  0 0 30px rgba(34,211,238,0.2);
 
   /* Typography */
-  --font-heading:   'Space Grotesk', sans-serif;
-  --font-body:      'Inter', sans-serif;
+  --font-heading:   "Press Start 2P";
+  --font-body:      "Space Mono", monospace;
 
   /* Spacing */
   --radius-sm:      8px;
@@ -98,7 +98,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size:17.7112px;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -113,17 +113,17 @@ body {
 }
 
 /* ── Typography ── */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, em {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-primary);
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.6rem, 4vw, 2.5rem); }
-h3 { font-size: clamp(1.2rem, 3vw, 1.75rem); }
-h4 { font-size: clamp(1rem, 2.5vw, 1.25rem); }
+h1 { font-size:clamp(1.7711rem, 4.16vw, 2.8798rem); }
+h2 { font-size:clamp(1.5007rem, 3.328vw, 2.2173rem); }
+h3 { font-size:clamp(1.164rem, 2.6vw, 1.663rem); }
+h4 { font-size:clamp(0.9978rem, 2.08vw, 1.2195rem); }
 
 p {
   color: var(--text-secondary);
@@ -199,12 +199,12 @@ img {
 
 .btn-lg {
   padding: 0.85rem 2rem;
-  font-size: 1rem;
+  font-size:1.1086rem;
 }
 
 .btn-sm {
   padding: 0.45rem 1.1rem;
-  font-size: 0.85rem;
+  font-size:0.9424rem;
 }
 
 /* ── Card Base ── */
@@ -258,7 +258,7 @@ img {
   gap: 0.35rem;
   padding: 0.3rem 0.75rem;
   border-radius: var(--radius-pill);
-  font-size: 0.78rem;
+  font-size:0.8653rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -370,7 +370,7 @@ img {
 .navbar-brand {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size:1.1086rem;
   color: var(--text-primary) !important;
   letter-spacing: -0.02em;
   display: flex;
@@ -388,7 +388,7 @@ img {
 }
 
 .navbar-nav .nav-link {
-  font-size: 0.9rem;
+  font-size:0.9978rem;
   font-weight: 500;
   color: var(--text-secondary) !important;
   padding: 0.4rem 0.75rem !important;
@@ -469,7 +469,7 @@ img {
 }
 
 .offcanvas-body .nav-link {
-  font-size: 1rem;
+  font-size:1.1086rem;
   font-weight: 500;
   color: var(--text-primary);
   padding: 0.75rem 0;
@@ -521,7 +521,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size:1.1086rem;
   flex-shrink: 0;
 }
 
@@ -530,8 +530,8 @@ img {
 .ls-toast-warning .ls-toast-icon { background: rgba(245,158,11,0.12); color: var(--accent-warm); }
 
 .ls-toast-content { flex: 1; }
-.ls-toast-title { font-family: var(--font-heading); font-size: 0.88rem; font-weight: 600; color: var(--text-primary); }
-.ls-toast-msg   { font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px; }
+.ls-toast-title { font-family: var(--font-heading); font-size:0.9762rem; font-weight: 600; color: var(--text-primary); }
+.ls-toast-msg   { font-size:0.8869rem; color: var(--text-secondary); margin-top: 2px; }
 
 .ls-toast-close {
   background: none;
@@ -575,7 +575,7 @@ img {
   gap: 0.3rem;
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-pill);
-  font-size: 0.8rem;
+  font-size:0.8869rem;
   font-weight: 500;
   background: var(--bg-subtle);
   color: var(--text-secondary);
@@ -645,7 +645,7 @@ img {
 
 .ls-footer a {
   color: rgba(255,255,255,0.5);
-  font-size: 0.88rem;
+  font-size:0.9762rem;
   display: block;
   margin-bottom: 0.6rem;
   transition: color var(--t-fast);
@@ -655,7 +655,7 @@ img {
 
 .ls-footer .footer-brand {
   font-family: var(--font-heading);
-  font-size: 1.3rem;
+  font-size:1.4466rem;
   font-weight: 700;
   color: #fff;
 }
@@ -675,7 +675,7 @@ img {
   background: rgba(255,255,255,0.08);
   color: rgba(255,255,255,0.6);
   margin-right: 0.5rem;
-  font-size: 0.95rem;
+  font-size:1.0533rem;
   transition: all var(--t-fast);
   margin-bottom: 0;
 }
@@ -735,7 +735,7 @@ img {
     color: var(--text-primary);
 
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size:1.379rem;
     font-weight: 800;
 
     text-decoration: none;
@@ -783,7 +783,7 @@ img {
 .sidebar-user-copy strong {
     color: var(--text-primary);
 
-    font-size: .88rem;
+    font-size:0.9762rem;
     font-weight: 700;
 
     white-space: nowrap;
@@ -796,7 +796,7 @@ img {
 
     color: var(--text-muted);
 
-    font-size: .72rem;
+    font-size:0.7977rem;
 }
 
 .learning-nav {
@@ -811,7 +811,7 @@ img {
 
     color: var(--text-muted);
 
-    font-size: .69rem;
+    font-size:1rem;
     font-weight: 700;
 
     text-transform: uppercase;
@@ -836,7 +836,7 @@ img {
     color: var(--text-secondary);
 
     font-family: var(--font-body);
-    font-size: .84rem;
+    font-size:1rem;
     font-weight: 600;
 
     text-decoration: none;
@@ -871,7 +871,7 @@ img {
 
     color: var(--text-muted);
 
-    font-size: .95rem;
+    font-size:1.0533rem;
 }
 
 .learning-nav-link.active .nav-icon {
@@ -960,3 +960,43 @@ img {
         display: none;
     }
 }
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY SYSTEM
+   Matched to index.html / landing.css
+   ───────────────────────────────────────────── */
+html { font-size:13.624px; }
+
+body {
+    font-family: var(--font-body);
+    font-size:0.9694rem;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+}
+
+h1 { font-size:clamp(1.5548rem, 3.12vw, 2.2714rem); line-height: 1.15; }
+h2 { font-size:clamp(1.2195rem, 2.288vw, 1.6089rem); line-height: 1.2; }
+h3 { font-size:clamp(0.9978rem, 1.872vw, 1.164rem); line-height: 1.3; }
+h4 { font-size:0.9978rem; line-height: 1.35; }
+
+button, input, select, textarea {
+    font-family: var(--font-body);
+}
+
+p {
+    font-size:0.9316rem;
+    line-height: 1.65;
+}
+
+/* Final typography tuning */
+body { font-size: 1.014rem; }
+h1 { font-size: clamp(1.755rem, 3.2vw, 2.275rem); }
+h2 { font-size: clamp(1.3rem, 2.4vw, 1.664rem); }
+h3 { font-size: clamp(1.066rem, 2vw, 1.3rem); }
+h4 { font-size: 0.988rem; }
+.navbar-brand { font-size: 1.066rem; }
+.navbar-nav .nav-link { font-size: 0.936rem; }
+.offcanvas-body .nav-link { font-size: 1.014rem; }
+button, input, select, textarea { font-size: 0.936rem; }

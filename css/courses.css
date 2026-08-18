@@ -67,7 +67,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 4vw, 2.65rem);
+    font-size:clamp(2.001rem, 4.16vw, 2.9338rem);
     font-weight: 800;
 
     line-height: 1.05;
@@ -81,7 +81,7 @@
 
     color: var(--text-secondary);
 
-    font-size: 0.84rem;
+    font-size:0.9316rem;
     line-height: 1.7;
 }
 
@@ -95,7 +95,7 @@
 
     color: var(--text-muted);
 
-    font-size: 0.72rem;
+    font-size:0.7977rem;
 }
 
 .courses-summary i {
@@ -157,7 +157,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-heading);
-    font-size: 1.9rem;
+    font-size:2.1091rem;
     font-weight: 800;
 
     line-height: 1;
@@ -168,7 +168,7 @@
 
     color: var(--text-muted);
 
-    font-size: 0.66rem;
+    font-size:0.7314rem;
 }
 
 
@@ -212,7 +212,7 @@
     color: var(--text-muted);
 
     font-family: var(--font-body);
-    font-size: 0.72rem;
+    font-size:0.7977rem;
     font-weight: 700;
 
     white-space: nowrap;
@@ -281,7 +281,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-body);
-    font-size: 0.74rem;
+    font-size:0.8207rem;
 }
 
 .course-search input::placeholder {
@@ -445,7 +445,7 @@
 
     backdrop-filter: blur(8px);
 
-    font-size: 0.56rem;
+    font-size:0.6206rem;
     font-weight: 800;
 
     letter-spacing: 0.08em;
@@ -461,7 +461,7 @@
 
     color: rgba(255, 255, 255, 0.92);
 
-    font-size: 3.35rem;
+    font-size:3.718rem;
 
     filter:
         drop-shadow(
@@ -476,7 +476,7 @@
     color: rgba(255, 255, 255, 0.94);
 
     font-family: var(--font-heading);
-    font-size: 2.1rem;
+    font-size:2.3254rem;
     font-weight: 800;
 
     line-height: 0.9;
@@ -503,7 +503,7 @@
 
     color: var(--text-muted);
 
-    font-size: 0.66rem;
+    font-size:0.7314rem;
 }
 
 .course-meta span:first-child {
@@ -517,7 +517,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-heading);
-    font-size: 1.2rem;
+    font-size:1.3304rem;
     font-weight: 800;
 
     line-height: 1.1;
@@ -531,7 +531,7 @@
 
     color: var(--text-secondary);
 
-    font-size: 0.76rem;
+    font-size:0.8423rem;
     line-height: 1.65;
 }
 
@@ -548,7 +548,7 @@
 
     color: var(--text-muted);
 
-    font-size: 0.66rem;
+    font-size:0.7314rem;
 }
 
 .course-progress-row strong {
@@ -601,7 +601,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-body);
-    font-size: 0.7rem;
+    font-size:0.7761rem;
     font-weight: 800;
 
     cursor: pointer;
@@ -625,7 +625,7 @@
 }
 
 .course-action i {
-    font-size: 0.9rem;
+    font-size:0.9978rem;
 }
 
 
@@ -658,7 +658,7 @@
     background: var(--primary-light);
     color: var(--primary);
 
-    font-size: 1.25rem;
+    font-size:1.379rem;
 }
 
 .empty-courses h3 {
@@ -667,7 +667,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-heading);
-    font-size: 1.35rem;
+    font-size:1.5007rem;
     font-weight: 800;
 }
 
@@ -676,7 +676,7 @@
 
     color: var(--text-secondary);
 
-    font-size: 0.76rem;
+    font-size:0.8423rem;
 }
 
 
@@ -748,3 +748,15 @@
     }
 
 }
+/* Typography alignment with landing */
+.courses-hero h2 { font-size:clamp(1.717rem, 3.64vw, 2.6094rem); line-height: 1.1; }
+.course-body h3 { font-size:1.164rem; line-height: 1.3; }
+.empty-courses h3 { font-size:1.2749rem; line-height: 1.3; }
+.courses-hero p { font-size:0.9086rem; line-height: 1.65; }
+
+/* Final typography tuning */
+.courses-hero h2 { font-size: clamp(1.69rem, 3.6vw, 2.47rem); }
+.courses-hero p { font-size: 0.936rem; }
+.course-body h3 { font-size: 1.17rem; }
+.course-body p { font-size: 0.884rem; }
+.empty-courses h3 { font-size: 1.274rem; }

@@ -1,123 +1,17 @@
-// New file: js/courses.js
 (function () {
   'use strict';
-
-  const cards = Array.from(document.querySelectorAll('.course-card'));
-  const tabs = Array.from(document.querySelectorAll('.course-tab'));
-  const searchInput = document.getElementById('courseSearch');
-  const emptyState = document.getElementById('emptyCourses');
-  const clearFiltersBtn = document.getElementById('clearFiltersBtn');
-
-  function userData() {
-    return window.LS?.Auth?.getUser?.() || { name: 'Alex Morgan', currentLevel: 'Communicator' };
-  }
-
-  function getInitials(name) {
-    return name.trim().split(/\s+/).slice(0, 2).map(part => part[0]).join('').toUpperCase() || 'AM';
-  }
-
-  function hydrateUser() {
-    const user = userData();
-    const name = user.name || 'Alex Morgan';
-    const firstName = name.split(/\s+/)[0];
-    const level = user.currentLevel || 'Communicator';
-    const avatar = getInitials(name);
-    const nameEl = document.getElementById('sidebarUserName');
-    const levelEl = document.getElementById('sidebarUserLevel');
-    const sidebarAvatar = document.getElementById('sidebarAvatar');
-    const topbarAvatar = document.getElementById('topbarAvatar');
-    if (nameEl) nameEl.textContent = name;
-    if (levelEl) levelEl.textContent = `${level} · Level 4`;
-    if (sidebarAvatar) sidebarAvatar.textContent = avatar;
-    if (topbarAvatar) topbarAvatar.textContent = avatar;
-    document.title = `Courses · ${name} | LingoSphere`;
-    return firstName;
-  }
-
-  function showToast(message) {
-    if (window.LS?.Toast?.show) {
-      window.LS.Toast.show(message);
-      return;
-    }
-    window.alert(message);
-  }
-
-  function applyFilters() {
-    const activeTab = document.querySelector('.course-tab.active');
-    const filter = activeTab?.dataset.filter || 'all';
-    const query = (searchInput?.value || '').trim().toLowerCase();
-    let visible = 0;
-
-    cards.forEach(card => {
-      const matchesFilter = filter === 'all' || card.dataset.status === filter || card.dataset.category === filter;
-      const matchesSearch = !query || (card.dataset.search || '').includes(query) || card.querySelector('h3')?.textContent.toLowerCase().includes(query);
-      const show = matchesFilter && matchesSearch;
-      card.classList.toggle('is-hidden', !show);
-      if (show) visible += 1;
-    });
-
-    if (emptyState) emptyState.hidden = visible > 0;
-  }
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(item => {
-        item.classList.remove('active');
-        item.setAttribute('aria-selected', 'false');
-      });
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-      applyFilters();
-    });
-  });
-
-  searchInput?.addEventListener('input', applyFilters);
-
-  clearFiltersBtn?.addEventListener('click', () => {
-    searchInput.value = '';
-    document.querySelector('.course-tab.active')?.classList.remove('active');
-    const allTab = document.querySelector('.course-tab[data-filter="all"]');
-    allTab?.classList.add('active');
-    tabs.forEach(tab => tab.setAttribute('aria-selected', tab === allTab ? 'true' : 'false'));
-    applyFilters();
-  });
-
-  document.querySelectorAll('.course-action').forEach(button => {
-    button.addEventListener('click', () => {
-      const courseName = button.dataset.course || 'course';
-      const isResume = button.classList.contains('primary');
-      showToast(`${isResume ? 'Resuming' : 'Starting'} ${courseName}. Lesson player will be connected next.`);
-    });
-  });
-
-  document.querySelectorAll('.coming-soon-link').forEach(link => {
-    link.addEventListener('click', event => {
-      event.preventDefault();
-      showToast(`${link.textContent.trim()} is coming soon.`);
-    });
-  });
-
-  document.getElementById('notificationBtn')?.addEventListener('click', () => {
-    showToast('You have 3 new notifications.');
-  });
-
-  document.getElementById('logoutBtn')?.addEventListener('click', () => {
-    if (window.LS?.Auth?.logout) window.LS.Auth.logout();
-  });
-
-  const sidebar = document.getElementById('learningSidebar');
-  const backdrop = document.getElementById('sidebarBackdrop');
-  const openBtn = document.getElementById('sidebarOpen');
-  const closeBtn = document.getElementById('sidebarClose');
-  const setSidebar = open => {
-    sidebar?.classList.toggle('open', open);
-    backdrop?.classList.toggle('show', open);
-    document.body.classList.toggle('sidebar-open', open);
-  };
-  openBtn?.addEventListener('click', () => setSidebar(true));
-  closeBtn?.addEventListener('click', () => setSidebar(false));
-  backdrop?.addEventListener('click', () => setSidebar(false));
-
-  hydrateUser();
-  applyFilters();
+  const cards=Array.from(document.querySelectorAll('.course-card')),tabs=Array.from(document.querySelectorAll('.course-tab')),searchInput=document.getElementById('courseSearch'),emptyState=document.getElementById('emptyCourses'),clearFiltersBtn=document.getElementById('clearFiltersBtn');
+  const courseCounts={'Travel English':8,'Everyday Conversations':10,'Vocabulary Builder':12,'Speak With Confidence':9,'Grammar In Context':14,'Listening Lab':7};
+  function userData(){return window.LS?.Auth?.getUser?.()||{name:'Alex Morgan',currentLevel:'Communicator'};}
+  function getInitials(name){return name.trim().split(/\s+/).slice(0,2).map(p=>p[0]).join('').toUpperCase()||'AM';}
+  function hydrateUser(){const u=userData(),name=u.name||'Alex Morgan',first=name.split(/\s+/)[0],level=u.currentLevel||'Communicator',avatar=getInitials(name);document.getElementById('sidebarUserName')?.replaceChildren(document.createTextNode(name));document.getElementById('sidebarUserLevel')?.replaceChildren(document.createTextNode(`${level} · Level 4`));document.getElementById('sidebarAvatar')?.replaceChildren(document.createTextNode(avatar));document.getElementById('topbarAvatar')?.replaceChildren(document.createTextNode(avatar));document.title=`Courses · ${name} | LingoSphere`;return first;}
+  function showToast(message){if(window.LS?.Toast?.show){window.LS.Toast.show(message);return;}window.alert(message);}
+  function completedCount(course){try{return JSON.parse(localStorage.getItem(`lingosphere.completedLessons.${course}`)||'[]').length;}catch{return 0;}}
+  function updateCards(){cards.forEach(card=>{const button=card.querySelector('.course-action'),name=button?.dataset.course;if(!name||!courseCounts[name])return;const total=courseCounts[name],done=Math.min(completedCount(name),total),percent=Math.round(done/total*100);const progressText=card.querySelector('.course-progress-row span'),progressStrong=card.querySelector('.course-progress-row strong'),bar=card.querySelector('.course-progress span'),meta=card.querySelector('.course-meta span:nth-child(2)');if(progressText)progressText.textContent=done?`${percent}% complete`:'Not started';if(progressStrong)progressStrong.textContent=`${done} / ${total}`;if(bar)bar.style.width=`${percent}%`;if(meta)meta.textContent=`${total} lessons + final test`;if(button){button.classList.toggle('primary',done>0&&done<total);button.querySelector('span').textContent=done===total?'Review course':done?'Resume course':'Start course';}});}
+  function applyFilters(){const active=document.querySelector('.course-tab.active'),filter=active?.dataset.filter||'all',query=(searchInput?.value||'').trim().toLowerCase();let visible=0;cards.forEach(card=>{const okf=filter==='all'||card.dataset.status===filter||card.dataset.category===filter,oks=!query||(card.dataset.search||'').includes(query)||card.querySelector('h3')?.textContent.toLowerCase().includes(query),show=okf&&oks;card.classList.toggle('is-hidden',!show);if(show)visible++;});if(emptyState)emptyState.hidden=visible>0;}
+  tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(x=>{x.classList.remove('active');x.setAttribute('aria-selected','false');});tab.classList.add('active');tab.setAttribute('aria-selected','true');applyFilters();}));searchInput?.addEventListener('input',applyFilters);clearFiltersBtn?.addEventListener('click',()=>{searchInput.value='';document.querySelector('.course-tab.active')?.classList.remove('active');const all=document.querySelector('.course-tab[data-filter="all"]');all?.classList.add('active');tabs.forEach(t=>t.setAttribute('aria-selected',t===all?'true':'false'));applyFilters();});
+  document.querySelectorAll('.course-action').forEach(button=>button.addEventListener('click',()=>{const course=button.dataset.course;if(courseCounts[course]){const done=completedCount(course),next=Math.min(done+1,courseCounts[course]);window.location.href=`lesson.html?course=${encodeURIComponent(course)}&lesson=${next}`;return;}showToast(`Starting ${course}.`);}));
+  document.getElementById('notificationBtn')?.addEventListener('click',()=>showToast('You have 3 new notifications.'));document.getElementById('logoutBtn')?.addEventListener('click',()=>window.LS?.Auth?.logout?.());
+  const sidebar=document.getElementById('learningSidebar'),backdrop=document.getElementById('sidebarBackdrop'),openBtn=document.getElementById('sidebarOpen'),closeBtn=document.getElementById('sidebarClose'),setSidebar=open=>{sidebar?.classList.toggle('open',open);backdrop?.classList.toggle('show',open);document.body.classList.toggle('sidebar-open',open);};openBtn?.addEventListener('click',()=>setSidebar(true));closeBtn?.addEventListener('click',()=>setSidebar(false));backdrop?.addEventListener('click',()=>setSidebar(false));
+  hydrateUser();updateCards();applyFilters();
 })();

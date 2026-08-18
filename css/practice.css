@@ -135,7 +135,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-heading);
-    font-size: clamp(1.7rem, 3vw, 2.15rem);
+    font-size:clamp(1.8793rem, 3.12vw, 2.3795rem);
     font-weight: 800;
 
     line-height: 1.05;
@@ -176,7 +176,7 @@
 
     color: #fff;
 
-    font-size: 0.85rem;
+    font-size:0.9424rem;
 }
 
 .practice-streak strong {
@@ -185,7 +185,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-heading);
-    font-size: 0.9rem;
+    font-size:0.9978rem;
     font-weight: 800;
 
     line-height: 1;
@@ -198,7 +198,7 @@
 
     color: var(--text-muted);
 
-    font-size: 0.66rem;
+    font-size:0.7314rem;
 }
 
 
@@ -238,7 +238,7 @@
 
     color: inherit;
 
-    font-size: 0.68rem;
+    font-size:0.7544rem;
     font-weight: 800;
 
     text-transform: uppercase;
@@ -255,7 +255,7 @@
     color: #fff;
 
     font-family: var(--font-heading);
-    font-size: clamp(1.65rem, 3.5vw, 2.35rem);
+    font-size:clamp(1.8252rem, 3.64vw, 2.6094rem);
     font-weight: 800;
 
     line-height: 1.08;
@@ -269,7 +269,7 @@
 
     color: rgba(255, 255, 255, 0.82);
 
-    font-size: 0.86rem;
+    font-size:0.9532rem;
     line-height: 1.65;
 }
 
@@ -300,13 +300,13 @@
 
     color: rgba(255, 255, 255, 0.8);
 
-    font-size: 0.76rem;
+    font-size:0.8423rem;
 }
 
 .practice-progress-heading strong {
     color: #fff;
 
-    font-size: 0.78rem;
+    font-size:0.8653rem;
     font-weight: 800;
 }
 
@@ -356,7 +356,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size:1.4466rem;
     font-weight: 800;
 
     letter-spacing: -0.02em;
@@ -365,7 +365,7 @@
 .practice-section-count {
     color: var(--text-muted);
 
-    font-size: 0.72rem;
+    font-size:0.7977rem;
     font-weight: 700;
 }
 
@@ -464,7 +464,7 @@
     background: var(--primary-light);
     color: var(--text-primary);
 
-    font-size: 0.64rem;
+    font-size:0.7098rem;
     font-weight: 800;
 
     text-transform: uppercase;
@@ -479,7 +479,7 @@
 .practice-mode-time {
     color: var(--text-muted);
 
-    font-size: 0.68rem;
+    font-size:0.7544rem;
     font-weight: 600;
 }
 
@@ -501,7 +501,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-heading);
-    font-size: 1.05rem;
+    font-size:1.164rem;
     font-weight: 800;
 
     transition:
@@ -528,7 +528,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-heading);
-    font-size: 1.05rem;
+    font-size:1.164rem;
     font-weight: 800;
 
     letter-spacing: -0.015em;
@@ -541,7 +541,7 @@
 
     color: var(--text-secondary);
 
-    font-size: 0.78rem;
+    font-size:0.8653rem;
     line-height: 1.6;
 }
 
@@ -561,7 +561,7 @@
 
     color: var(--text-muted);
 
-    font-size: 0.7rem;
+    font-size:0.7761rem;
 }
 
 .practice-start {
@@ -633,7 +633,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-heading);
-    font-size: 1.4rem;
+    font-size:1.5548rem;
     font-weight: 800;
 
     letter-spacing: -0.03em;
@@ -685,7 +685,7 @@
 
     color: var(--text-muted);
 
-    font-size: 0.72rem;
+    font-size:0.7977rem;
     font-weight: 600;
 }
 
@@ -720,7 +720,7 @@
 
     color: var(--primary);
 
-    font-size: 0.66rem;
+    font-size:0.7314rem;
     font-weight: 800;
 
     text-transform: uppercase;
@@ -733,7 +733,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-heading);
-    font-size: 1.18rem;
+    font-size:1.3087rem;
     font-weight: 700;
 
     line-height: 1.5;
@@ -764,7 +764,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-body);
-    font-size: 0.82rem;
+    font-size:0.9086rem;
     line-height: 1.45;
 
     text-align: left;
@@ -818,7 +818,7 @@
 
     color: var(--text-secondary);
 
-    font-size: 0.76rem;
+    font-size:0.8423rem;
     font-weight: 600;
     line-height: 1.5;
 }
@@ -847,7 +847,7 @@
     color: #fff;
 
     font-family: var(--font-body);
-    font-size: 0.78rem;
+    font-size:0.8653rem;
     font-weight: 800;
 
     cursor: pointer;
@@ -918,7 +918,7 @@
     color: var(--text-primary);
 
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size:1.2195rem;
     font-weight: 800;
 }
 
@@ -926,7 +926,7 @@
     color: var(--primary);
 
     font-family: var(--font-heading);
-    font-size: 0.82rem;
+    font-size:0.9086rem;
     font-weight: 800;
 }
 
@@ -984,7 +984,7 @@
 .practice-week-chart .chart-day span {
     color: var(--text-muted);
 
-    font-size: 0.68rem;
+    font-size:0.7544rem;
 }
 
 
@@ -1024,7 +1024,7 @@
 
     color: var(--text-primary);
 
-    font-size: 0.78rem;
+    font-size:0.8653rem;
     font-weight: 700;
 
     white-space: nowrap;
@@ -1039,7 +1039,7 @@
 
     color: var(--text-muted);
 
-    font-size: 0.68rem;
+    font-size:0.7544rem;
 }
 
 .practice-results .result-score {
@@ -1048,7 +1048,7 @@
     color: var(--primary);
 
     font-family: var(--font-heading);
-    font-size: 0.78rem;
+    font-size:0.8653rem;
     font-weight: 800;
 }
 
@@ -1113,7 +1113,7 @@
     }
 
     .practice-header h1 {
-        font-size: 1.65rem;
+        font-size:1.8252rem;
     }
 
     .practice-streak {
@@ -1185,15 +1185,15 @@
     }
 
     .practice-hero h2 {
-        font-size: 1.55rem;
+        font-size:1.717rem;
     }
 
     .practice-hero p {
-        font-size: 0.8rem;
+        font-size:0.8869rem;
     }
 
     .practice-section-heading h2 {
-        font-size: 1.15rem;
+        font-size:1.2749rem;
     }
 
     .practice-card {
@@ -1211,7 +1211,7 @@
     }
 
     .practice-session-header h2 {
-        font-size: 1.2rem;
+        font-size:1.3304rem;
     }
 
     .practice-question {
@@ -1223,7 +1223,7 @@
     }
 
     .practice-question-prompt {
-        font-size: 1rem;
+        font-size:1.1086rem;
     }
 
     .practice-panel {
@@ -1255,6 +1255,23 @@
     background: var(--bg-card);
     color: var(--text-secondary);
 
-    font-size: 1.1rem;
+    font-size:1.2195rem;
     cursor: pointer;
 }
+/* Typography alignment with landing */
+.practice-header h1 { font-size:clamp(1.663rem, 3.12vw, 2.2714rem); line-height: 1.12; }
+.practice-hero h2 { font-size:clamp(1.663rem, 3.64vw, 2.3795rem); line-height: 1.1; }
+.practice-section-heading h2 { font-size:1.2749rem; line-height: 1.3; }
+.practice-card h3 { font-size:1.0871rem; line-height: 1.35; }
+.practice-session-header h2 { font-size:1.3304rem; line-height: 1.3; }
+.practice-panel-heading h2 { font-size:1.1086rem; line-height: 1.3; }
+.practice-hero p { font-size:0.9086rem; line-height: 1.65; }
+
+/* Final typography tuning */
+.practice-header h1 { font-size: clamp(1.69rem, 3vw, 2.21rem); }
+.practice-hero h2 { font-size: clamp(1.69rem, 3.5vw, 2.405rem); }
+.practice-hero p { font-size: 0.936rem; }
+.practice-section-heading h2 { font-size: 1.274rem; }
+.practice-card h3 { font-size: 1.092rem; }
+.practice-session-header h2 { font-size: 1.3rem; }
+.practice-panel-heading h2 { font-size: 1.118rem; }
