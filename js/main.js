@@ -1,5 +1,5 @@
 /* ============================================================
-   LINGOSPHERE — main.js
+   Wordventure — main.js
    Global JavaScript: theme, navbar, toast, scroll reveal,
    animated counters, page transitions, chat demo
    ============================================================ */

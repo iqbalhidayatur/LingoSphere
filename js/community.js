@@ -177,10 +177,10 @@ async function sharePost(button) {
 
             await navigator.share({
                 title:
-                    'LingoSphere Community',
+                    'Wordventure Community',
 
                 text:
-                    'Check out this post on LingoSphere Community.',
+                    'Check out this post on Wordventure Community.',
 
                 url:
                     window.location.href
