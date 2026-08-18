@@ -8,6 +8,166 @@
   const lessons = COURSE_DATA[course];
   const questions = [];
 
+
+  if (course === "Writing Practice") {
+    const writingQuestions = lessons.map((lesson, index) => ({
+      q: lesson.example,
+      instruction: lesson.prompt,
+      expected: lesson.phrases[0][1],
+      keywords: lesson.phrases[0][1].toLowerCase().replace(/[“”"'.!,?;:()]/g, ' ').split(/\s+/).filter(Boolean)
+    }));
+
+    const writingState = {
+      current: 0,
+      checked: false,
+      score: 0,
+      results: Array(writingQuestions.length).fill(null)
+    };
+
+    function normalizeWriting(text) {
+      return text.toLowerCase()
+        .replace(/[“”"'.!,?;:()]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function scoreWriting(answer, item) {
+      const normalized = normalizeWriting(answer);
+      const expected = normalizeWriting(item.expected);
+      const expectedWords = expected.split(' ').filter(Boolean);
+      const answerWords = normalized.split(' ').filter(Boolean);
+      const answerSet = new Set(answerWords);
+      const matched = expectedWords.filter(word => answerSet.has(word)).length;
+      const coverage = expectedWords.length ? matched / expectedWords.length : 0;
+      const exact = normalized === expected;
+      let score = Math.round(coverage * 80);
+      if (exact) score = 100;
+      else if (coverage >= .9) score = 95;
+      else if (coverage >= .75) score = 85;
+      else if (coverage >= .6) score = 70;
+      const missing = [...new Set(expectedWords.filter(word => !answerSet.has(word)))].slice(0, 4);
+      return { score, exact, missing };
+    }
+
+    function showWritingQuestion() {
+      const item = writingQuestions[writingState.current];
+      $('questionProgress').textContent = `Question ${writingState.current + 1} of ${writingQuestions.length}`;
+      $('scorePreview').textContent = `${writingState.score} / ${writingQuestions.length * 100}`;
+      $('progressBar').style.width = `${(writingState.current / writingQuestions.length) * 100}%`;
+
+      $('questionArea').innerHTML = `
+        <div class="question-kicker">${course} · Writing assessment</div>
+        <h2 class="question-title">${item.q}</h2>
+        <p class="writing-test-instruction">${item.instruction}</p>
+        <div class="writing-test-wrap">
+          <textarea id="writingTestAnswer" class="writing-test-answer" rows="6" placeholder="Tulis terjemahan bahasa Inggris Anda..."></textarea>
+          <div class="writing-test-meta"><span>Write your answer in English</span><span id="writingTestWords">0 words</span></div>
+        </div>
+      `;
+
+      writingState.checked = false;
+      $('feedback').hidden = true;
+      $('feedback').className = 'test-feedback';
+      $('nextBtn').disabled = true;
+      $('nextBtn').style.display = '';
+      $('backQuestionBtn').style.display = '';
+      $('nextBtn').innerHTML = 'Check writing <i class="bi bi-check2"></i>';
+      $('backQuestionBtn').disabled = writingState.current === 0;
+
+      const input = $('writingTestAnswer');
+      input.addEventListener('input', () => {
+        const words = input.value.trim() ? input.value.trim().split(/\s+/).length : 0;
+        $('writingTestWords').textContent = `${words} words`;
+        $('nextBtn').disabled = !input.value.trim();
+      });
+      input.focus();
+    }
+
+    function checkWriting() {
+      const item = writingQuestions[writingState.current];
+      const input = $('writingTestAnswer');
+      if (!input?.value.trim()) return;
+
+      if (!writingState.checked) {
+        const result = scoreWriting(input.value, item);
+        writingState.checked = true;
+        writingState.results[writingState.current] = result;
+        writingState.score += result.score;
+
+        const passed = result.score >= 70;
+        $('feedback').hidden = false;
+        $('feedback').className = `test-feedback ${passed ? 'good' : 'bad'}`;
+        $('feedback').textContent = `${result.score}/100. ${passed ? 'Good translation.' : 'Needs improvement.'} Correct reference: “${item.expected}”.${result.missing.length && !result.exact ? ` Check: ${result.missing.join(', ')}.` : ''}`;
+
+        input.disabled = true;
+        $('nextBtn').innerHTML = writingState.current === writingQuestions.length - 1
+          ? 'See result <i class="bi bi-trophy-fill"></i>'
+          : 'Next question <i class="bi bi-arrow-right"></i>';
+        $('scorePreview').textContent = `${writingState.score} / ${writingQuestions.length * 100}`;
+        return;
+      }
+
+      if (writingState.current < writingQuestions.length - 1) {
+        writingState.current += 1;
+        showWritingQuestion();
+        return;
+      }
+
+      showWritingResult();
+    }
+
+    function showWritingResult() {
+      const maxScore = writingQuestions.length * 100;
+      const percent = Math.round(writingState.score / maxScore * 100);
+      const passed = percent >= 70;
+
+      if (passed) {
+        const xp = Number(localStorage.getItem('lingosphere.xp') || 0);
+        localStorage.setItem('lingosphere.xp', String(xp + 100));
+        localStorage.setItem(`lingosphere.courseTestPassed.${course}`, 'true');
+        localStorage.setItem(`lingosphere.courseCompleted.${course}`, 'true');
+      }
+
+      $('progressBar').style.width = '100%';
+      $('questionProgress').textContent = 'Final result';
+      $('scorePreview').textContent = `${percent}%`;
+      $('questionArea').innerHTML = `
+        <div class="test-result">
+          <div class="test-result-icon"><i class="bi ${passed ? 'bi-trophy-fill' : 'bi-pencil-square'}"></i></div>
+          <h2>${passed ? 'Writing course completed.' : 'Keep practicing your writing.'}</h2>
+          <p>${passed ? 'You passed the writing assessment.' : 'You need 70% to pass. Review the writing lessons and try again.'}</p>
+          <div class="test-result-score">${percent}% · ${writingState.score} / ${maxScore}</div>
+          <div class="test-result-actions">
+            ${passed ? '<button class="primary-btn" id="coursesBtn" type="button">Back to courses</button>' : '<button class="primary-btn" id="retryBtn" type="button">Retry test</button>'}
+          </div>
+        </div>
+      `;
+      $('feedback').hidden = true;
+      $('backQuestionBtn').style.display = 'none';
+      $('nextBtn').style.display = 'none';
+      $('testIntro').textContent = passed ? 'Nice work. Your writing course is complete.' : 'Review the writing lessons and try again.';
+
+      document.getElementById('coursesBtn')?.addEventListener('click', () => window.location.href = 'courses.html');
+      document.getElementById('retryBtn')?.addEventListener('click', () => window.location.reload());
+    }
+
+    $('nextBtn').addEventListener('click', checkWriting);
+    $('backQuestionBtn').addEventListener('click', () => {
+      if (writingState.current > 0) {
+        writingState.current -= 1;
+        showWritingQuestion();
+      }
+    });
+    $('backBtn').addEventListener('click', () => window.location.href = 'courses.html');
+    $('xpValue').textContent = `${Number(localStorage.getItem('lingosphere.xp') || 0)} XP`;
+    $('questionCount').textContent = writingQuestions.length;
+    $('testIntro').textContent = `Translate the Indonesian prompts into English. Each answer is scored from 0 to 100. You need 70% overall to pass.`;
+    showWritingQuestion();
+    return;
+  }
+
+
+
   function buildQuestions() {
     lessons.forEach((lesson, lessonIndex) => {
       const [word, meaning] = lesson.vocabulary[0];

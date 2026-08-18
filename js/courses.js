@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   const cards=Array.from(document.querySelectorAll('.course-card')),tabs=Array.from(document.querySelectorAll('.course-tab')),searchInput=document.getElementById('courseSearch'),emptyState=document.getElementById('emptyCourses'),clearFiltersBtn=document.getElementById('clearFiltersBtn');
-  const courseCounts={'Travel English':8,'Everyday Conversations':10,'Vocabulary Builder':12,'Speak With Confidence':9,'Grammar In Context':14,'Listening Lab':7};
+  const courseCounts={'Travel English':8,'Everyday Conversations':10,'Vocabulary Builder':12,'Speak With Confidence':9,'Grammar In Context':14,'Listening Lab':7,'Writing Practice':8};
   function userData(){return window.LS?.Auth?.getUser?.()||{name:'Alex Morgan',currentLevel:'Communicator'};}
   function getInitials(name){return name.trim().split(/\s+/).slice(0,2).map(p=>p[0]).join('').toUpperCase()||'AM';}
   function hydrateUser(){const u=userData(),name=u.name||'Alex Morgan',first=name.split(/\s+/)[0],level=u.currentLevel||'Communicator',avatar=getInitials(name);document.getElementById('sidebarUserName')?.replaceChildren(document.createTextNode(name));document.getElementById('sidebarUserLevel')?.replaceChildren(document.createTextNode(`${level} · Level 4`));document.getElementById('sidebarAvatar')?.replaceChildren(document.createTextNode(avatar));document.getElementById('topbarAvatar')?.replaceChildren(document.createTextNode(avatar));document.title=`Courses · ${name} | Wordventure`;return first;}

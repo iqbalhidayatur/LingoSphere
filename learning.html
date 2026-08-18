@@ -19,6 +19,7 @@
       body, body * { font-family: var(--font-body); }
       h1, h2, h3, h4, h5, h6, .navbar-brand, .brand, .logo, .display-font { font-family: var(--font-heading); }
     </style>
+<link rel="stylesheet" href="css/chatbot.css">
 </head>
 <body class="learning-page page-transition">
     <div class="learning-shell">
@@ -121,7 +122,14 @@
                 </a>
 
 
-                <a
+        
+        <a href="weekly-exam.html" class="learning-nav-link" data-page="weekly-exam">
+            <span class="nav-icon"><i class="bi bi-clipboard2-check-fill"></i></span>
+            <span>Weekly Exam</span>
+            <span class="nav-required-dot"></span>
+        </a>
+
+        <a
                     href="community.html"
                     class="learning-nav-link"
                     data-page="community"
@@ -186,7 +194,7 @@
                     </button>
                     <div>
                         <span class="eyebrow">Saturday, August 15</span>
-                        <h1>Ready to learn, <h1 id="greetingName">Alex?</h1></h1>
+                        <h1>Ready to learn,Alex?</h1>
                     </div>
                 </div>
                 <div class="topbar-actions">
@@ -235,7 +243,7 @@
                         <div class="stat-icon icon-purple"><i class="bi bi-fire"></i></div>
                         <div>
                             <span>Current streak</span>
-                            <strong id="dayStreak"><span id="statStreak"></span>days</strong>
+                            <strong id="dayStreak"><span id="statStreak"></span>8 days</strong>
                             <small><i class="bi bi-arrow-up-right"></i> Best: 12 days</small>
                         </div>
                     </article>
@@ -263,6 +271,17 @@
                             <small>+18% vs last week</small>
                         </div>
                     </article>
+                </section>
+
+                <section class="weekly-dashboard-card reveal" id="weeklyExamDashboardCard">
+                    <div class="weekly-dashboard-icon"><i class="bi bi-clipboard2-check-fill"></i></div>
+                    <div class="weekly-dashboard-copy">
+                        <span class="section-kicker">Required this week</span>
+                        <h3>Weekly Exam</h3>
+                        <p>Complete your weekly checkpoint anytime. It takes about 10 to 15 minutes.</p>
+                        <div class="weekly-dashboard-meta"><span><i class="bi bi-list-check"></i> 10 questions</span><span><i class="bi bi-trophy-fill"></i> +150 XP</span></div>
+                    </div>
+                    <div class="weekly-dashboard-action"><span id="weeklyDashboardStatus">Not completed</span><a href="weekly-exam.html" class="btn btn-primary">Take exam <i class="bi bi-arrow-right"></i></a></div>
                 </section>
 
                 <div class="dashboard-grid">
@@ -416,6 +435,26 @@
                 });
             });
         });
-    </script>
+    
+            const weeklyKey = (() => {
+                const d = new Date();
+                const day = d.getDay() || 7;
+                d.setDate(d.getDate() + 4 - day);
+                const yearStart = new Date(d.getFullYear(), 0, 1);
+                return `${d.getFullYear()}-W${String(Math.ceil((((d - yearStart) / 86400000) + 1) / 7)).padStart(2, '0')}`;
+            })();
+            try {
+                const weekly = JSON.parse(localStorage.getItem('wordventure.weeklyExam') || '{}');
+                const done = weekly.week === weeklyKey && weekly.completed === true;
+                const status = document.getElementById('weeklyDashboardStatus');
+                const card = document.getElementById('weeklyExamDashboardCard');
+                if (done) {
+                    status.textContent = `Completed · ${weekly.score}%`;
+                    card.classList.add('completed');
+                }
+            } catch {}
+</script>
+<script src="js/chatbot.js"></script>
+
 </body>
 </html>

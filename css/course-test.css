@@ -175,3 +175,53 @@
   .test-actions { flex-direction: column-reverse; }
   .test-actions button { width: 100%; }
 }
+
+
+.writing-test-instruction {
+  margin: 0 0 18px;
+  padding: 13px 15px;
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+  border: 1px solid var(--bg-border);
+  line-height: 1.6;
+}
+
+.writing-test-wrap {
+  display: grid;
+  gap: 8px;
+}
+
+.writing-test-answer {
+  width: 100%;
+  min-height: 170px;
+  resize: vertical;
+  padding: 16px;
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: .9rem;
+  line-height: 1.65;
+  outline: none;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);
+}
+
+.writing-test-answer:focus {
+  border-color: var(--primary);
+  background: var(--bg-card);
+  box-shadow: 0 0 0 3px rgba(99, 91, 255, .1);
+}
+
+.writing-test-answer:disabled {
+  opacity: .7;
+}
+
+.writing-test-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: .68rem;
+  font-weight: 700;
+}

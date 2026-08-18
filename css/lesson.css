@@ -1373,3 +1373,296 @@
     padding: 15px;
   }
 }
+
+
+/* Writing Practice */
+.writing-practice .answer-grid {
+    display: block;
+}
+
+.writing-answer-wrap {
+    display: grid;
+    gap: 8px;
+}
+
+.writing-answer {
+    width: 100%;
+    min-height: 150px;
+    resize: vertical;
+    padding: 16px;
+    border: 1px solid var(--bg-border);
+    border-radius: var(--radius-md);
+    background: var(--bg-subtle);
+    color: var(--text-primary);
+    font: inherit;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    outline: none;
+    transition: border-color var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);
+}
+
+.writing-answer:focus {
+    border-color: var(--primary);
+    background: var(--bg-card);
+    box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.1);
+}
+
+.writing-answer::placeholder {
+    color: var(--text-muted);
+}
+
+.writing-answer-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--text-muted);
+    font-size: 0.68rem;
+    font-weight: 700;
+}
+
+/* Speaking Practice */
+.speaking-practice .answer-grid {
+  display: block;
+}
+
+.speaking-practice-card {
+  display: grid;
+  gap: 16px;
+}
+
+.speaking-read-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.speaking-read-label i {
+  font-size: .72rem;
+}
+
+.speaking-read-text {
+  padding: 20px 22px;
+  border: 1px solid var(--bg-border);
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.speaking-instruction {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--grad-card);
+  color: var(--text-secondary);
+  font-size: .7rem;
+  line-height: 1.55;
+}
+
+.speaking-instruction i {
+  color: var(--primary);
+  margin-top: 2px;
+}
+
+.speaking-recorder {
+  padding: 16px;
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+}
+
+.speaking-recorder-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.speaking-recorder-top > div:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.speaking-recorder-top strong {
+  color: var(--text-primary);
+  font-size: .72rem;
+}
+
+.speaking-recorder-top span {
+  color: var(--text-muted);
+  font-size: .62rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.speaking-level {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.speaking-level i {
+  display: block;
+  width: 3px;
+  height: 8px;
+  border-radius: 99px;
+  background: var(--primary);
+  opacity: .22;
+}
+
+.speaking-record-btn.recording + audio + .x,
+.speaking-record-btn.recording ~ .speaking-level {
+  opacity: 1;
+}
+
+.speaking-record-btn.recording ~ * {
+  opacity: 1;
+}
+
+.speaking-record-btn {
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--grad-primary);
+  color: var(--text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font: inherit;
+  font-size: .76rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow-glow);
+  transition: transform var(--t-fast), opacity var(--t-fast), box-shadow var(--t-fast);
+}
+
+.speaking-record-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.speaking-record-btn.recording {
+  background: var(--bg-subtle);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  box-shadow: none;
+}
+
+.speaking-record-btn:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.speaking-recorder audio {
+  width: 100%;
+  height: 34px;
+  margin-top: 12px;
+}
+
+.speaking-transcript-box {
+  padding: 14px 16px;
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+}
+
+.speaking-transcript-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+  font-size: .58rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.speaking-transcript-head span:first-child {
+  color: var(--text-secondary);
+}
+
+.speaking-transcript-box p {
+  min-height: 42px;
+  margin: 0;
+  color: var(--text-primary);
+  font-size: .76rem;
+  line-height: 1.6;
+}
+
+.speaking-score {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  background: var(--grad-card);
+}
+
+.speaking-score-number {
+  min-width: 76px;
+  color: var(--primary);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.speaking-score strong,
+.speaking-score span {
+  display: block;
+}
+
+.speaking-score strong {
+  color: var(--text-primary);
+  font-size: .72rem;
+}
+
+.speaking-score span {
+  margin-top: 3px;
+  color: var(--text-muted);
+  font-size: .6rem;
+}
+
+@keyframes speakingBar {
+  0%, 100% { transform: scaleY(.45); opacity: .28; }
+  50% { transform: scaleY(1.45); opacity: 1; }
+}
+
+.speaking-recorder:has(.speaking-record-btn.recording) .speaking-level i {
+  animation: speakingBar .8s ease-in-out infinite;
+}
+
+.speaking-recorder:has(.speaking-record-btn.recording) .speaking-level i:nth-child(2) { animation-delay: .1s; }
+.speaking-recorder:has(.speaking-record-btn.recording) .speaking-level i:nth-child(3) { animation-delay: .2s; }
+.speaking-recorder:has(.speaking-record-btn.recording) .speaking-level i:nth-child(4) { animation-delay: .3s; }
+.speaking-recorder:has(.speaking-record-btn.recording) .speaking-level i:nth-child(5) { animation-delay: .4s; }
+.speaking-recorder:has(.speaking-record-btn.recording) .speaking-level i:nth-child(6) { animation-delay: .5s; }
+.speaking-recorder:has(.speaking-record-btn.recording) .speaking-level i:nth-child(7) { animation-delay: .6s; }
+.speaking-recorder:has(.speaking-record-btn.recording) .speaking-level i:nth-child(8) { animation-delay: .7s; }
+
+@media (max-width: 640px) {
+  .speaking-read-text {
+    padding: 16px;
+    font-size: .92rem;
+  }
+
+  .speaking-recorder-top {
+    align-items: flex-start;
+  }
+
+  .speaking-level {
+    display: none;
+  }
+}

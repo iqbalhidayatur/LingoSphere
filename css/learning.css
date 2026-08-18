@@ -258,7 +258,7 @@
 .floating-xp { width: 145px; right: 12px; top: 25px; }
 .floating-level { width: 128px; left: 16px; bottom: 26px; transform: rotate(-5deg); }
 
-.stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 16px; margin-bottom: 22px; }
 .stat-card { min-height: 108px; display: flex; align-items: center; gap: 13px; padding: 18px; background: var(--bg-card); border: 1px solid var(--bg-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
 .stat-icon { width: 42px; height: 42px; flex: 0 0 42px; border-radius: 13px; display: grid; place-items: center; font-size:1.064rem; }
 .icon-purple { background: rgba(99,91,255,.12); color: var(--primary); }
@@ -405,3 +405,19 @@
 .challenge-body p { font-size: 0.845rem; }
 .activity-item strong { font-size: 0.858rem; }
 .activity-item span { font-size: 0.754rem; }
+
+
+/* Weekly Exam dashboard card */
+.weekly-dashboard-card { display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:18px; margin-bottom:22px; padding:20px; border:1px solid var(--bg-border); border-radius:var(--radius-lg); background:var(--grad-card); box-shadow:var(--shadow-sm); }
+.weekly-dashboard-icon { width:52px; height:52px; display:grid; place-items:center; border-radius:var(--radius-md); background:var(--grad-primary); color:var(--text-inverse); box-shadow:var(--shadow-glow); }
+.weekly-dashboard-icon i { font-size:1.15rem; }
+.weekly-dashboard-copy h3 { margin:5px 0 5px; color:var(--text-primary); font-family:var(--font-heading); font-size:1rem; }
+.weekly-dashboard-copy p { margin:0; color:var(--text-secondary); font-size:.74rem; line-height:1.55; }
+.weekly-dashboard-meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+.weekly-dashboard-meta span { color:var(--text-muted); font-size:.62rem; font-weight:700; }
+.weekly-dashboard-meta i { color:var(--primary); margin-right:4px; }
+.weekly-dashboard-action { display:flex; flex-direction:column; align-items:flex-end; gap:9px; }
+.weekly-dashboard-action > span { color:var(--orange,#ff9843); font-size:.61rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; }
+.weekly-dashboard-card.completed .weekly-dashboard-action > span { color:var(--accent); }
+.nav-required-dot { width:7px; height:7px; margin-left:auto; border-radius:50%; background:var(--orange,#ff9843); box-shadow:0 0 0 3px rgba(255,152,67,.1); }
+@media (max-width:767.98px) { .weekly-dashboard-card { grid-template-columns:auto minmax(0,1fr); } .weekly-dashboard-action { grid-column:1 / -1; align-items:stretch; } .weekly-dashboard-action .btn { width:100%; } }
