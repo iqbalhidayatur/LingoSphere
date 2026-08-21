@@ -13,6 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/learning.css">
 <!-- Wordventure typography consistency -->
     <style id="Wordventure-typography-consistency">
@@ -129,6 +130,22 @@
             <span class="nav-required-dot"></span>
         </a>
 
+        <a href="vocabulary.html" class="learning-nav-link" data-page="vocabulary">
+            <span class="nav-icon"><i class="bi bi-bookmark-heart-fill"></i></span>
+            <span>Vocabulary</span>
+        </a>
+
+        <a href="achievements.html" class="learning-nav-link" data-page="achievements">
+            <span class="nav-icon"><i class="bi bi-award-fill"></i></span>
+            <span>Achievements</span>
+        </a>
+
+        <a href="analytics.html" class="learning-nav-link" data-page="analytics">
+            <span class="nav-icon"><i class="bi bi-bar-chart-fill"></i></span>
+            <span>Analytics</span>
+        </a>
+
+
         <a
                     href="community.html"
                     class="learning-nav-link"
@@ -194,7 +211,9 @@
                     </button>
                     <div>
                         <span class="eyebrow">Saturday, August 15</span>
-                        <h1>Ready to learn,Alex?</h1>
+                        <div class="d-flex">
+                            <h1>Ready to learn, <h1 id="greetingName">Alex?</h1></h1>
+                        </div>
                     </div>
                 </div>
                 <div class="topbar-actions">
@@ -243,7 +262,7 @@
                         <div class="stat-icon icon-purple"><i class="bi bi-fire"></i></div>
                         <div>
                             <span>Current streak</span>
-                            <strong id="dayStreak"><span id="statStreak"></span>8 days</strong>
+                            <strong id="dayStreak"><span id="statStreak"></span>days</strong>
                             <small><i class="bi bi-arrow-up-right"></i> Best: 12 days</small>
                         </div>
                     </article>
